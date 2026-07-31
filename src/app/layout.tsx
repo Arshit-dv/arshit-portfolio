@@ -11,36 +11,32 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: `${PERSONAL_INFO.name} | Computer Science & AI Portfolio`,
-  description: `${PERSONAL_INFO.name} - Computer Science undergraduate specializing in Software Engineering, AI & Machine Learning, Data Science, and Full Stack Development.`,
+  description: `${PERSONAL_INFO.name} - Computer Science undergraduate specializing in Software Engineering, AI & Machine Learning, and Data Science.`,
   keywords: [
     "Computer Science",
     "Software Engineer",
     "Machine Learning",
     "AI Developer",
     "Data Science",
-    "Full Stack Developer",
     "Next.js",
     "TypeScript",
     "Python",
-    "PyTorch",
-    "Go",
-    "Systems Engineering"
+    "C++"
   ],
   authors: [{ name: PERSONAL_INFO.name }],
   creator: PERSONAL_INFO.name,
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://example.com",
+    url: "https://github.com/Arshit-dv",
     title: `${PERSONAL_INFO.name} | Software Engineer & AI Specialist`,
-    description: PERSONAL_INFO.bio,
+    description: PERSONAL_INFO.aboutMe,
     siteName: `${PERSONAL_INFO.name} Portfolio`,
   },
   twitter: {
     card: "summary_large_image",
     title: `${PERSONAL_INFO.name} | Computer Science Portfolio`,
-    description: PERSONAL_INFO.bio,
-    creator: "@arshit",
+    description: PERSONAL_INFO.aboutMe,
   },
   robots: {
     index: true,
@@ -57,20 +53,22 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     "name": PERSONAL_INFO.name,
-    "jobTitle": "Software Engineer & AI Developer",
-    "description": PERSONAL_INFO.bio,
+    "jobTitle": "Software Engineer & Data Scientist",
+    "description": PERSONAL_INFO.aboutMe,
     "knowsAbout": [
       "Software Engineering",
       "Computer Science",
       "Machine Learning",
       "Data Science",
-      "Distributed Systems",
-      "Full Stack Web Development"
+      "Algorithms",
+      "Distributed Systems"
     ],
     "sameAs": [
       PERSONAL_INFO.github,
       PERSONAL_INFO.linkedin,
-      PERSONAL_INFO.twitter
+      PERSONAL_INFO.codechef,
+      PERSONAL_INFO.leetcode,
+      PERSONAL_INFO.codeforces
     ]
   };
 
