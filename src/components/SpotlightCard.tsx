@@ -26,14 +26,14 @@ export default function SpotlightCard({ children, className = '', onClick }: Spo
       onMouseEnter={() => setOpacity(1)}
       onMouseLeave={() => setOpacity(0)}
       onClick={onClick}
-      className={`relative overflow-hidden rounded-2xl bg-zinc-900/60 border border-zinc-800/80 transition-all duration-300 hover:-translate-y-1 hover:border-zinc-700 hover:shadow-[0_0_20px_rgba(59,130,246,0.06)] ${className}`}
+      className={`relative overflow-hidden rounded-2xl bg-[#121215] border border-zinc-800/90 transition-all duration-300 hover:-translate-y-1 hover:border-zinc-700/80 ${className}`}
     >
-      {/* Soft, subtle cursor-following color glow */}
+      {/* Soft cursor-following neutral glow */}
       <div
         className="pointer-events-none absolute -inset-px transition-opacity duration-300 z-0"
         style={{
           opacity,
-          background: `radial-gradient(350px circle at ${position.x}px ${position.y}px, rgba(59, 130, 246, 0.08), rgba(6, 182, 212, 0.03) 60%, transparent 80%)`
+          background: `radial-gradient(350px circle at ${position.x}px ${position.y}px, rgba(255, 255, 255, 0.05), transparent 75%)`
         }}
       />
       <div className="relative z-10">{children}</div>

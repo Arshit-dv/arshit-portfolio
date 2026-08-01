@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { PERSONAL_INFO } from "@/data/portfolioData";
 
-const inter = Inter({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-jakarta",
   display: "swap",
 });
 
@@ -80,7 +80,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.variable} font-sans bg-[#09090b] text-zinc-100 antialiased selection:bg-cyan-500/30 selection:text-white`}>
+      <body className={`${jakarta.variable} font-sans bg-[#0a0a0c] text-zinc-100 antialiased selection:bg-zinc-700/40 selection:text-white`}>
         {children}
       </body>
     </html>

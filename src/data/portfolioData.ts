@@ -221,7 +221,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     period: '2024 – Present',
     type: 'Education',
     fields: ['swe', 'aiml', 'ds'],
-    summary: 'Core focus on Algorithms, Competitive Coding, Data Science, System Design, and Web Architectures.',
+    summary: 'Core focus on Software Engineering, Data Science, AI/Machine Learning, and Data Structures & Algorithms.',
     achievements: [
       'Maintained a top-tier CGPA of 9.11/10.0 across CS coursework.',
       'Global Rank 1096 out of 28,000+ global coders in CodeChef START249D.',

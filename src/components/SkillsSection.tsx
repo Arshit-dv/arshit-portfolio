@@ -9,25 +9,25 @@ export default function SkillsSection() {
   const [filter, setFilter] = useState<string>('all');
 
   return (
-    <section id="skills" className="py-20 relative overflow-hidden bg-zinc-950/40 border-t border-zinc-800/60">
+    <section id="skills" className="py-24 relative overflow-hidden bg-[#0a0a0c] border-t border-zinc-800/60">
       
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         
         {/* Header */}
-        <div className="text-left mb-8">
-          <div className="text-xs font-mono text-blue-400 mb-2 uppercase tracking-wider">
+        <div className="text-left mb-10">
+          <div className="text-xs font-mono text-amber-400 mb-2 uppercase tracking-widest font-semibold">
             TECHNICAL STACK
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
             Skills & Competencies
           </h2>
-          <p className="text-zinc-400 text-sm mt-2">
+          <p className="text-zinc-400 text-sm mt-2 max-w-xl">
             Programming languages, databases, web technologies, and AI frameworks.
           </p>
         </div>
 
         {/* Filter Pills */}
-        <div className="flex flex-wrap items-center gap-2 mb-8">
+        <div className="flex flex-wrap items-center gap-2 mb-10">
           {[
             { id: 'all', label: 'All Skills' },
             { id: 'swe', label: 'Software Eng' },
@@ -37,10 +37,10 @@ export default function SkillsSection() {
             <button
               key={item.id}
               onClick={() => setFilter(item.id)}
-              className={`px-4 py-2 rounded-xl text-xs font-medium transition-all focus:outline-none ${
+              className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all focus:outline-none cursor-pointer ${
                 filter === item.id
-                  ? 'bg-blue-600 text-white font-semibold shadow-md'
-                  : 'bg-zinc-900 text-zinc-400 border border-zinc-800 hover:text-zinc-200'
+                  ? 'bg-zinc-800 text-white border border-zinc-700/80 shadow-sm'
+                  : 'bg-[#121215] text-zinc-400 border border-zinc-800 hover:text-zinc-200 hover:border-zinc-700'
               }`}
             >
               {item.label}
@@ -65,12 +65,12 @@ export default function SkillsSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: idx * 0.08 }}
               >
-                <SpotlightCard className="p-6 h-full flex flex-col justify-between">
+                <SpotlightCard className="p-6 sm:p-7 h-full flex flex-col justify-between">
                   <div>
                     <h3 className="text-base font-bold text-white mb-2">
                       {cat.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 mb-4">
+                    <p className="text-xs text-zinc-400 mb-4 leading-relaxed">
                       {cat.description}
                     </p>
                   </div>
@@ -79,7 +79,7 @@ export default function SkillsSection() {
                     {filteredCategorySkills.map((skill, sIdx) => (
                       <div
                         key={sIdx}
-                        className="px-3 py-1.5 rounded-xl text-xs font-medium bg-zinc-800/80 border border-zinc-700/60 text-zinc-300 transition-transform hover:scale-105"
+                        className="px-3 py-1.5 rounded-xl text-xs font-medium bg-[#0a0a0c] border border-zinc-800 text-zinc-300 transition-all hover:border-zinc-600 hover:text-white hover:scale-105"
                       >
                         {skill.name}
                       </div>

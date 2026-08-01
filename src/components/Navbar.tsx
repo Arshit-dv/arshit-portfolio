@@ -7,10 +7,8 @@ import {
   FolderGit2, 
   Code2, 
   Briefcase, 
-  Mail, 
-  Github
+  Mail
 } from 'lucide-react';
-import { PERSONAL_INFO } from '@/data/portfolioData';
 
 const DOCK_ITEMS = [
   { id: 'hero', label: 'Home', icon: Home },
@@ -66,8 +64,8 @@ export default function Navbar() {
   };
 
   return (
-    <div className="fixed top-6 right-0 left-0 z-50 flex justify-center px-4 pointer-events-none">
-      <nav className="pointer-events-auto flex items-center gap-2 p-2 rounded-full bg-zinc-900/90 border border-zinc-800/80 shadow-2xl backdrop-blur-xl transition-all">
+    <div className="fixed top-6 right-0 left-0 z-40 flex justify-center px-4 pointer-events-none">
+      <nav className="pointer-events-auto flex items-center gap-1.5 p-2 rounded-full bg-[#0a0a0c]/90 border border-zinc-800/80 shadow-2xl backdrop-blur-xl transition-all">
         {DOCK_ITEMS.map((item) => {
           const isActive = activeSection === item.id;
           const isHovered = hoveredItem === item.id;
@@ -81,7 +79,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: 5, scale: 0.9 }}
                   animate={{ opacity: 1, y: -40, scale: 1 }}
                   exit={{ opacity: 0, y: 5, scale: 0.9 }}
-                  className="absolute left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-md bg-zinc-800 text-[11px] font-medium text-zinc-200 border border-zinc-700 whitespace-nowrap shadow-lg pointer-events-none"
+                  className="absolute left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-md bg-zinc-900 text-[11px] font-medium text-zinc-200 border border-zinc-700 whitespace-nowrap shadow-lg pointer-events-none"
                 >
                   {item.label}
                 </motion.div>
@@ -93,8 +91,8 @@ export default function Navbar() {
                 onMouseLeave={() => setHoveredItem(null)}
                 className={`relative w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 focus:outline-none ${
                   isActive
-                    ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-[0_0_15px_rgba(59,130,246,0.5)]'
-                    : 'text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/80'
+                    ? 'bg-zinc-800 text-white border border-zinc-700/80 shadow-md'
+                    : 'text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60'
                 }`}
                 aria-label={item.label}
               >
@@ -103,31 +101,6 @@ export default function Navbar() {
             </div>
           );
         })}
-
-        <div className="h-5 w-[1px] bg-zinc-800 mx-1" />
-
-        {/* GitHub link icon */}
-        <a
-          href={PERSONAL_INFO.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          onMouseEnter={() => setHoveredItem('github')}
-          onMouseLeave={() => setHoveredItem(null)}
-          className="relative w-10 h-10 rounded-full flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-800/80 transition-all"
-          aria-label="GitHub Profile"
-        >
-          {hoveredItem === 'github' && (
-            <motion.div
-              initial={{ opacity: 0, y: 5, scale: 0.9 }}
-              animate={{ opacity: 1, y: -40, scale: 1 }}
-              className="absolute left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-md bg-zinc-800 text-[11px] font-medium text-zinc-200 border border-zinc-700 whitespace-nowrap shadow-lg pointer-events-none"
-            >
-              GitHub
-            </motion.div>
-          )}
-          <Github className="w-4 h-4" />
-        </a>
-
       </nav>
     </div>
   );

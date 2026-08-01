@@ -4,106 +4,84 @@
 
 @layer base {
   :root {
-    --color-bg: #09090B;
-    --color-surface: #18181B;
-    --color-border: #27272A;
-    --color-primary: #3B82F6;
-    --color-secondary: #8B5CF6;
+    --color-bg: #0a0a0c;
+    --color-surface: #121215;
+    --color-surface-hover: #18181c;
+    --color-border: rgba(255, 255, 255, 0.07);
+    --color-accent-cyan: #22d3ee;
+    --color-accent-gold: #f59e0b;
   }
 
   html {
     scroll-behavior: smooth;
     color-scheme: dark;
-    background-color: #09090B;
-    color: #FAFAFA;
+    background-color: #0a0a0c;
+    color: #f4f4f6;
   }
 
   body {
-    background-color: #09090B;
-    color: #FAFAFA;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    background-color: #0a0a0c;
+    color: #f4f4f6;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     overflow-x: hidden;
-    selection-background-color: rgba(59, 130, 246, 0.3);
-    selection-color: #ffffff;
   }
 
   ::selection {
-    background: rgba(59, 130, 246, 0.3);
+    background: rgba(34, 211, 238, 0.25);
     color: #ffffff;
   }
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar - Minimal & Subtle */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #09090B;
+  background: #0a0a0c;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272A;
+  background: #222226;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3F3F46;
+  background: #333338;
 }
 
-/* Utilities */
+/* Minimalist Bespoke Utilities */
 @layer utilities {
-  /* Dotted Plane Background (Inspired by Taqui Portfolio & Vercel) */
-  .bg-dotted-pattern {
-    background-size: 24px 24px;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1.2px, transparent 1.2px);
-  }
-
-  .bg-dotted-pattern-dense {
-    background-size: 18px 18px;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px);
-  }
-
-  .bg-grid-pattern {
+  .bg-subtle-grid {
     background-size: 32px 32px;
     background-image: 
-      linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   }
 
-  .text-gradient {
+  /* Refined Silver & Charcoal Gradients */
+  .text-subtle-heading {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-200 to-zinc-400;
   }
 
-  .text-gradient-primary {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-300 to-violet-400;
-  }
-
-  .text-gradient-secondary {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-purple-300 to-pink-400;
+  .text-emerald-subtle {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-zinc-100 via-emerald-300 to-zinc-300;
   }
 
   .glass-card {
-    background: rgba(24, 24, 27, 0.7);
+    background: rgba(18, 18, 21, 0.85);
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(39, 39, 42, 0.8);
-  }
-
-  .glass-card-hover {
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .glass-card-hover:hover {
-    border-color: rgba(59, 130, 246, 0.4);
-    box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.12);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
   }
 
   .glass-nav {
-    background: rgba(18, 18, 21, 0.85);
+    background: rgba(10, 10, 12, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(39, 39, 42, 0.8);
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
   }
 }
+

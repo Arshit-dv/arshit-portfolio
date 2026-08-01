@@ -32,39 +32,39 @@ export default function ProjectsSection() {
   });
 
   return (
-    <section id="projects" className="py-20 relative overflow-hidden">
+    <section id="projects" className="py-24 relative overflow-hidden bg-[#0a0a0c]">
       
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
           <div>
-            <div className="text-xs font-mono text-blue-400 mb-2 uppercase tracking-wider">
+            <div className="text-xs font-mono text-cyan-400 mb-2 uppercase tracking-widest font-semibold">
               PROJECTS PORTFOLIO
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-              Featured Projects
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
+              Featured Works
             </h2>
-            <p className="text-zinc-400 text-sm mt-2">
+            <p className="text-zinc-400 text-sm mt-2 max-w-xl">
               Statistical validation packages, real-time distributed platforms, and machine learning engines.
             </p>
           </div>
 
           {/* Search bar */}
-          <div className="relative min-w-[260px]">
+          <div className="relative min-w-[280px]">
             <Search className="w-4 h-4 text-zinc-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
-              placeholder="Filter by tech or keyword..."
+              placeholder="Search by title or tech stack"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500 transition-colors font-mono"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#121215] border border-zinc-800 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-500 transition-colors font-mono"
             />
           </div>
         </div>
 
         {/* Filter Pills */}
-        <div className="flex flex-wrap items-center gap-2 mb-8">
+        <div className="flex flex-wrap items-center gap-2 mb-10">
           {[
             { id: 'all', label: 'All Projects' },
             { id: 'swe', label: 'Software Eng' },
@@ -74,10 +74,10 @@ export default function ProjectsSection() {
             <button
               key={tab.id}
               onClick={() => setSelectedFilter(tab.id)}
-              className={`px-4 py-2 rounded-xl text-xs font-medium transition-all focus:outline-none ${
+              className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all focus:outline-none cursor-pointer ${
                 selectedFilter === tab.id
-                  ? 'bg-blue-600 text-white font-semibold shadow-md'
-                  : 'bg-zinc-900/90 text-zinc-400 border border-zinc-800 hover:text-zinc-200'
+                  ? 'bg-zinc-800 text-white border border-zinc-700/80 shadow-sm'
+                  : 'bg-[#121215] text-zinc-400 border border-zinc-800/80 hover:text-zinc-200 hover:border-zinc-700'
               }`}
             >
               {tab.label}
@@ -99,7 +99,7 @@ export default function ProjectsSection() {
               >
                 <SpotlightCard
                   onClick={() => setActiveModalProject(project)}
-                  className="p-6 h-full flex flex-col justify-between group cursor-pointer"
+                  className="p-6 sm:p-7 h-full flex flex-col justify-between group cursor-pointer"
                 >
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-3">
@@ -107,20 +107,20 @@ export default function ProjectsSection() {
                         {project.fields.map((field) => (
                           <span
                             key={field}
-                            className="px-2 py-0.5 rounded text-[10px] font-mono uppercase bg-zinc-800 text-blue-400"
+                            className="px-2 py-0.5 rounded-md text-[10px] font-mono uppercase bg-zinc-800/80 text-zinc-300 border border-zinc-700/60"
                           >
                             {field}
                           </span>
                         ))}
                       </div>
-                      <ArrowUpRight className="w-4 h-4 text-zinc-500 opacity-0 group-hover:opacity-100 group-hover:text-blue-400 transition-all" />
+                      <ArrowUpRight className="w-4 h-4 text-zinc-500 opacity-0 group-hover:opacity-100 group-hover:text-emerald-400 transition-all" />
                     </div>
 
-                    <h3 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors leading-snug">
                       {project.title}
                     </h3>
 
-                    <p className="text-xs text-zinc-400 font-medium mt-1">
+                    <p className="text-xs text-zinc-400 font-medium mt-1.5 leading-relaxed">
                       {project.tagline}
                     </p>
 
@@ -134,7 +134,7 @@ export default function ProjectsSection() {
                       {project.techStack.slice(0, 3).map((tech, idx) => (
                         <span
                           key={idx}
-                          className="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-800 text-zinc-400"
+                          className="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 text-zinc-400 border border-zinc-800/60"
                         >
                           {tech}
                         </span>
@@ -147,7 +147,7 @@ export default function ProjectsSection() {
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-1.5 rounded-lg bg-zinc-800 text-zinc-400 hover:text-white transition-colors"
+                          className="p-2 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 transition-colors"
                           title="GitHub"
                         >
                           <Github className="w-3.5 h-3.5" />
@@ -158,7 +158,7 @@ export default function ProjectsSection() {
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-1.5 rounded-lg bg-blue-950 text-blue-300 hover:bg-blue-900 transition-colors"
+                          className="p-2 rounded-xl bg-zinc-800 border border-zinc-700 text-white hover:bg-zinc-700 transition-colors shadow-md"
                           title="Live Demo"
                         >
                           <ExternalLink className="w-3.5 h-3.5" />
@@ -169,7 +169,7 @@ export default function ProjectsSection() {
                           href={project.kaggleUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="px-2 py-1 rounded-lg bg-blue-950 text-blue-300 hover:bg-blue-900 transition-colors text-[10px] font-mono"
+                          className="px-2.5 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white transition-colors text-[10px] font-mono"
                           title="Kaggle Notebook"
                         >
                           Kaggle ↗
@@ -193,7 +193,7 @@ export default function ProjectsSection() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="max-w-xl w-full rounded-2xl p-6 sm:p-8 bg-zinc-900 border border-zinc-800 shadow-2xl relative"
+              className="max-w-xl w-full rounded-2xl p-6 sm:p-8 bg-[#121215] border border-zinc-700/80 shadow-2xl relative text-zinc-200"
             >
               <button
                 onClick={() => setActiveModalProject(null)}
@@ -206,7 +206,7 @@ export default function ProjectsSection() {
                 <h3 className="text-2xl font-bold text-white">
                   {activeModalProject.title}
                 </h3>
-                <p className="text-xs text-zinc-400 font-medium">
+                <p className="text-xs text-emerald-400 font-mono font-medium">
                   {activeModalProject.tagline}
                 </p>
                 <p className="text-xs text-zinc-300 leading-relaxed">
@@ -214,10 +214,10 @@ export default function ProjectsSection() {
                 </p>
 
                 <div className="pt-3 border-t border-zinc-800 space-y-2">
-                  <div className="text-xs font-mono font-bold text-zinc-400 uppercase">Key Highlights</div>
+                  <div className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-wider">Key Highlights</div>
                   {activeModalProject.highlights.map((h, i) => (
                     <div key={i} className="flex items-start gap-2 text-xs text-zinc-300">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
                       <span>{h}</span>
                     </div>
                   ))}
@@ -240,7 +240,7 @@ export default function ProjectsSection() {
                       href={activeModalProject.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-medium flex items-center gap-2 hover:bg-blue-500 transition-colors"
+                      className="px-4 py-2 rounded-xl bg-zinc-800 text-white text-xs font-medium flex items-center gap-2 hover:bg-zinc-700 transition-colors border border-zinc-700"
                     >
                       <ExternalLink className="w-4 h-4" />
                       Live Demo
@@ -251,7 +251,7 @@ export default function ProjectsSection() {
                       href={activeModalProject.kaggleUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 rounded-xl bg-blue-950 text-blue-300 text-xs font-medium flex items-center gap-2 hover:bg-blue-900 transition-colors"
+                      className="px-4 py-2 rounded-xl bg-zinc-900 text-zinc-300 text-xs font-medium flex items-center gap-2 hover:bg-zinc-800 transition-colors border border-zinc-800"
                     >
                       Kaggle Notebook ↗
                     </a>
