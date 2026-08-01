@@ -79,13 +79,13 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-[65vh] pt-36 pb-16 flex flex-col justify-center overflow-hidden bg-subtle-grid">
-      
+
       {/* Background Ambient Blur - Cyan & Warm Amber */}
       <div className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[400px] bg-cyan-500/10 blur-[140px] rounded-full pointer-events-none" />
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[450px] h-[350px] bg-amber-500/10 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10 w-full">
-        
+
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -104,7 +104,7 @@ export default function Hero() {
 
           {/* Dynamic Role Subtitle with Typewriter Typing Animation */}
           <div className="text-xl sm:text-2xl md:text-3xl text-zinc-300 font-medium pt-1 flex items-center gap-2.5 min-h-[44px]">
-            <span className="text-zinc-400">I am</span>
+            <span className="text-zinc-400">I am a </span>
             <span className="font-bold text-cyan-400 border-b-2 border-cyan-500/80 pb-0.5">
               {currentText}
               <span className="animate-pulse text-cyan-400 font-normal">|</span>
