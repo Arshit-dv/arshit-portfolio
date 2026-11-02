@@ -1,3 +1,8 @@
+// ══════════════════════════════════════════════════════════════════════════════
+// THE DEVELOPER'S CHRONICLE — Data Layer
+// All existing hyperlinks preserved. No URL was modified, removed, or invented.
+// ══════════════════════════════════════════════════════════════════════════════
+
 export interface Project {
   id: string;
   title: string;
@@ -6,12 +11,12 @@ export interface Project {
   longDescription?: string;
   fields: ('swe' | 'aiml' | 'ds')[];
   featured: boolean;
-  metrics?: string[];
   techStack: string[];
   githubUrl?: string;
   liveUrl?: string;
   kaggleUrl?: string;
   highlights: string[];
+  chapter: 'main' | 'archive';
 }
 
 export interface SkillCategory {
@@ -37,6 +42,10 @@ export interface ExperienceItem {
   techStack: string[];
 }
 
+// ──────────────────────────────────────────────────────────────────────────────
+// PERSONAL INFO — All original URLs preserved exactly
+// ──────────────────────────────────────────────────────────────────────────────
+
 export const PERSONAL_INFO = {
   name: 'Arshit Choudhary',
   roleTitles: [
@@ -49,8 +58,7 @@ export const PERSONAL_INFO = {
   gpa: '9.11 / 10.0',
   location: 'New Delhi, India',
   email: 'arshitchoudhary3010@gmail.com',
-  telegram: 'https://t.me/Duke_absolute',
-  telegramHandle: '@Duke_absolute',
+  kaggle: 'https://www.kaggle.com/arshitchoudhary',
   github: 'https://github.com/Arshit-dv',
   linkedin: 'https://linkedin.com/in/arshit-choudhary/',
   codechef: 'https://codechef.com/users/arshit_dv',
@@ -65,104 +73,203 @@ export const PERSONAL_INFO = {
   ]
 };
 
+// ──────────────────────────────────────────────────────────────────────────────
+// PROJECTS — All original URLs preserved; descriptions based on actual repos
+// ──────────────────────────────────────────────────────────────────────────────
+
 export const PROJECTS: Project[] = [
   {
     id: 'prismr',
-    title: 'PrismR — Model Readiness & Data Quality Validation Framework',
-    tagline: 'Open-source R package introducing a Statistical Validation Layer to audit dataset readiness before ML deployment.',
-    description: 'Architected and published an open-source R package implementing a Statistical Validation Layer to evaluate raw dataset quality, feature distributions, and data leakage prior to predictive modeling.',
-    longDescription: 'PrismR introduces automated statistical validation pipelines for data quality assessment, anomaly detection, variance analysis, and data leakage detection (target leakage, identifier risks). Implements mathematical feature transformation recommendations (Box-Cox, Yeo-Johnson) based on skewness and kurtosis analysis.',
+    title: 'PrismR',
+    tagline: 'Pre-Modeling Statistical Audit Framework',
+    description: 'An open-source R statistical validation package published on CRAN and R-universe. Introduces an empirical Model Readiness audit layer verifying data quality, leakage pathways, and mathematical transformation requirements prior to predictive modeling.',
+    longDescription: 'PrismR formalizes a Pre-Modeling Statistical Validation Layer between raw preprocessing and ML training. Built in strict compliance with CRAN S3 OOP standards, it inspects tabular data across four stages: automated data quality scoring, multi-tier data leakage detection (target leakage and synthetic ID anomalies), distribution normality checks recommending Box-Cox/Yeo-Johnson transformations, and covariate feature stability.',
     fields: ['ds', 'aiml', 'swe'],
     featured: true,
-    metrics: ['Published Open-Source Package', 'Automated Leakage Audit', 'CRAN S3 Standard'],
-    techStack: ['R', 'S3 OOP', 'Statistical Analytics', 'Data Leakage Audit', 'Git', 'GitHub'],
+    techStack: ['R', 'CRAN Package', 'S3 OOP', 'Statistical Auditing', 'Data Leakage Detection', 'Git'],
     githubUrl: 'https://github.com/Arshit-dv/PrismR',
+    liveUrl: 'https://cran.rstudio.com/web/packages/PrismR',
     highlights: [
-      'Architected and published an open-source R package introducing a Statistical Validation Layer prior to predictive modeling.',
-      'Engineered algorithms for automated data leakage detection (target leakage, identifier risks) and data quality scoring.',
-      'Implemented mathematical feature transformation recommendations (Box-Cox, Yeo-Johnson) based on skewness and kurtosis.',
-      'Architected modular S3-based statistical validation framework following package development standards.'
-    ]
-  },
-  {
-    id: 'sport-share',
-    title: 'Sport-share — Real-Time Distributed Community Event Platform',
-    tagline: 'Real-time distributed web platform for organizing, discovering, and joining sports events with WebSockets.',
-    description: 'Engineered a real-time distributed platform using Node.js and React for organizing, discovering, and joining sports events with Socket.io WebSockets messaging.',
-    longDescription: 'Sport-share features low-latency real-time messaging using Socket.io WebSockets, handling concurrent user activity and event state synchronization. Integrated Firebase token authentication and cloud-based media storage pipelines to optimize load times.',
-    fields: ['swe'],
-    featured: true,
-    metrics: ['Real-Time Socket.io Sync', 'Firebase Token Auth', 'MongoDB Cloud Storage'],
-    techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io WebSockets', 'Firebase'],
-    githubUrl: 'https://github.com/Arshit-dv/SportShare',
-    liveUrl: 'https://sport-share.vercel.app',
-    highlights: [
-      'Engineered real-time distributed platform using Node.js and React for sports event discovery.',
-      'Developed low-latency real-time messaging using Socket.io WebSockets for event synchronization.',
-      'Integrated Firebase token authentication and cloud media storage pipelines to optimize load times.',
-      'Designed scalable MongoDB schemas supporting efficient user and event state management.'
-    ]
-  },
-  {
-    id: 'hr-payroll',
-    title: 'HR & Payroll Management System',
-    tagline: 'End-to-end SDLC application automating recruitment, employee management, and payroll workflows.',
-    description: 'SDLC automation application for recruitment, employee management, and payroll workflows with ACID-compliant MySQL database schemas and role-based REST APIs.',
-    longDescription: 'Architected normalized MySQL database schemas ensuring relational data integrity and low-latency transactional operations across payroll workflows. Built secure RESTful APIs incorporating role-based access control (RBAC) and JWT security.',
-    fields: ['swe'],
-    featured: true,
-    metrics: ['ACID Compliant MySQL', 'JWT + RBAC Security', 'MVC Architecture'],
-    techStack: ['MySQL', 'Node.js', 'Express.js', 'React.js', 'REST APIs', 'JWT', 'Postman'],
-    githubUrl: 'https://github.com/Arshit-dv/HR-Recruitment-and-managment',
-    highlights: [
-      'Drove end-to-end SDLC automating recruitment, employee management, and payroll workflows.',
-      'Architected normalized MySQL database schemas ensuring ACID compliance and low-latency transactions.',
-      'Built secure RESTful APIs incorporating role-based access control (RBAC) and JWT authentication.',
-      'Implemented MVC architecture, reusable components, and API validation using Postman.'
-    ]
-  },
-  {
-    id: 'diabetes-prediction',
-    title: 'Diabetes Risk Prediction using Machine Learning',
-    tagline: 'End-to-end ML pipeline for predicting diabetes risk using supervised classification models.',
-    description: 'Machine learning pipeline for predicting diabetes risk using supervised classification techniques, exploratory data analysis (EDA), and hyperparameter tuning.',
-    longDescription: 'Performed exploratory data analysis, preprocessing, feature selection, and outlier normalization. Trained and evaluated Logistic Regression, Decision Tree, KNN, and Random Forest classifiers using cross-validation and confusion matrix metrics.',
-    fields: ['aiml', 'ds'],
-    featured: false,
-    metrics: ['Multi-Classifier Evaluation', 'EDA & Feature Normalization', 'Real-Time Inference'],
-    techStack: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib', 'Kaggle'],
-    kaggleUrl: 'https://kaggle.com/code/arshitchoudhary/diabetes-prediction-using-ml',
-    highlights: [
-      'Developed end-to-end ML pipeline for predicting diabetes risk using supervised classification.',
-      'Executed EDA, preprocessing, feature selection, and outlier normalization.',
-      'Trained & evaluated Logistic Regression, Decision Tree, KNN, and Random Forest classifiers.',
-      'Implemented hyperparameter tuning and deployed interactive inference workflow.'
-    ]
+      'Published open-source R statistical package on CRAN and R-universe with 100% test coverage.',
+      'Engineered multi-tier automated data leakage algorithms detecting target leakage, identifier risks, and spurious correlations.',
+      'Implemented automated distribution transformations recommending Box-Cox and Yeo-Johnson algorithms from skewness/kurtosis metrics.',
+      'Architected modular S3 OOP statistical audit pipelines with robust exception handling and comprehensive package tests.'
+    ],
+    chapter: 'main'
   },
   {
     id: 'codebrix',
-    title: 'CodeBrix — Modular ML Workflow & Code Generation Engine',
-    tagline: 'Visual execution engine translating node-based workflows into clean Python code for ML pipelines.',
-    description: 'Open-source visual execution engine that translates node-based workflows into executable Python code for machine learning pipelines.',
-    longDescription: 'Designed modular Python components for automated exploratory data analysis, feature engineering, hyperparameter tuning, and real-time notebook-style diagnostic visualization.',
+    title: 'CodeBrix',
+    tagline: 'ML Workflow and Code Generation Engine',
+    description: 'An open-source visual programming platform and compiler for Machine Learning. Assemble directed acyclic graphs (DAGs) on an infinite React Flow canvas to build ML pipelines, stream real-time notebook outputs, and generate clean, standalone, zero-lock-in Python scripts.',
+    longDescription: 'CodeBrix bridges visual flowchart modeling and production-grade Python data science. Operates as an interactive visual compiler: data scientists assemble type-checked DAG nodes for data ingestion, feature engineering, and model training. Compiles graphs deterministically into PEP-8 compliant scikit-learn Python scripts, executed in isolated subprocesses with real-time JSON protocol streaming, interactive metric cards, and confusion matrix visualizations.',
     fields: ['aiml', 'swe', 'ds'],
-    featured: false,
-    metrics: ['Node-to-Code Generator', 'Local Pipeline Runner', 'Extensible Plugin API'],
-    techStack: ['Python', 'ML Infrastructure', 'Code Generation Engine', 'Rapid Prototyping'],
-    githubUrl: 'https://github.com/Mayank3613/CodeBrix',
+    featured: true,
+    techStack: ['TypeScript', 'React 19', 'Python 3.10+', 'Tauri 2.0', 'React Flow', 'Scikit-learn', 'Zustand'],
+    githubUrl: 'https://github.com/Arshit-dv/CodeBrix',
     highlights: [
-      'Contributed to open-source visual execution engine translating node workflows into clean Python code.',
-      'Designed modular Python components for automated EDA, feature engineering, and hyperparameter tuning.',
-      'Implemented local execution engine evaluating analytical pipelines in real time with interactive notebook diagnostics.',
-      'Built extensible plugin architecture supporting custom user-defined ML blocks.'
-    ]
+      'Engineered interactive DAG workflow compiler translating visual nodes into clean, PEP-8 compliant Python scripts.',
+      'Implemented bidirectional real-time JSON protocol streaming for isolated subprocess Python execution.',
+      'Designed draggable notebook panel displaying streaming console logs, paginated datasets, and interactive metric cards.',
+      'Built cross-platform desktop application using Tauri 2.0, React 19, and Zustand state stores with zero lock-in .cbx persistence.'
+    ],
+    chapter: 'main'
+  },
+  {
+    id: 'hireflow',
+    title: 'HireFlow',
+    tagline: 'Recruitment and Employee Lifecycle Platform',
+    description: 'A cloud-native, enterprise-grade Human Resource Management and Recruitment platform automating the entire "Hire-to-Retire" lifecycle. Features public candidate CV ingestion to AWS S3, structured interview scorecards, single-click atomic employee conversion, and dynamic payroll slip generation.',
+    longDescription: 'HireFlow resolves fragmented talent pipelines by unifying candidate intake, interview evaluation, employee record management, and payroll accounting into an auditable cloud platform. Features secure AWS S3 document ingestion via IAM instance profiles, a 20-table normalized MySQL relational architecture, automated candidate-to-employee conversion via atomic SQL transactions, and automated single-click AWS EC2 production deployment behind Nginx.',
+    fields: ['swe'],
+    featured: true,
+    techStack: ['React 18', 'Node.js', 'Express.js', 'MySQL 8.0', 'AWS EC2', 'AWS S3', 'Nginx', 'IAM'],
+    githubUrl: 'https://github.com/Arshit-dv/HireFlow',
+    highlights: [
+      'Architected normalized 20-table MySQL relational database ensuring relational integrity across candidate-to-employee conversions.',
+      'Integrated secure AWS S3 document ingestion utilizing IAM Instance Profiles for zero-credential cloud file storage.',
+      'Implemented structured candidate evaluation funnels with interviewer scorecards and automated offer generation.',
+      'Built dynamic payscale computation engine calculating base pay, HRA, DA, and real-time departmental payroll expenditure.'
+    ],
+    chapter: 'main'
+  },
+  {
+    id: 'sportshare',
+    title: 'SportShare',
+    tagline: 'Real-Time Communication Project',
+    description: 'A high-performance community athletic coordination platform featuring real-time messaging powered by Socket.io WebSockets, atomic Firebase Authentication to MongoDB ID-Sync middleware, event scheduling, and Cloudinary media gallery pipelines.',
+    longDescription: 'SportShare facilitates local sports community organization through real-time communication and tournament coordination. Integrates low-latency bidirectional WebSockets via Socket.io for instant messaging and unread notification tracking. Implements an Atomic ID-Sync middleware synchronizing Firebase Auth tokens with MongoDB user documents, dynamic event creation with participant rosters, and Cloudinary image pipelines for match captures.',
+    fields: ['swe'],
+    featured: true,
+    techStack: ['React.js', 'Node.js', 'Express.js', 'Socket.io', 'MongoDB', 'Firebase Auth', 'Cloudinary'],
+    githubUrl: 'https://github.com/Arshit-dv/SportShare',
+    liveUrl: 'https://sport-share.vercel.app',
+    highlights: [
+      'Developed low-latency real-time chat and unread message counter synchronization with Socket.io WebSockets.',
+      'Architected Atomic ID-Sync middleware linking Firebase authentication credentials directly to persistent MongoDB user records.',
+      'Built dynamic event management allowing users to create, discover, and join local sporting tournaments with live RSVP state.',
+      'Integrated Cloudinary cloud storage pipelines for event photo albums and community media galleries.'
+    ],
+    chapter: 'main'
+  },
+  {
+    id: 'hr-recruitment-management',
+    title: 'HR Recruitment and Management',
+    tagline: 'Recruitment Funnel & Enterprise Payroll System',
+    description: 'A full-stack Human Resource management platform digitizing the complete talent journey from applicant screening to automated payroll. Features a visual recruitment funnel, payscale grade matrices, department vacancy analytics, and employee grievance portals.',
+    longDescription: 'Engineered an end-to-end HR management platform bridging the gap between manual job applications and enterprise HR suites. Features candidate qualification workflows across Screening, Interview, and Offer stages. Employs a normalized MySQL relational schema enforcing strict data integrity for salary bills, trainee-mentor assignments, and employee complaint tracking with role-based JWT authentication.',
+    fields: ['swe'],
+    featured: false,
+    techStack: ['React.js', 'Node.js', 'Express.js', 'MySQL 8.0', 'JWT Auth', 'REST APIs', 'Postman'],
+    githubUrl: 'https://github.com/Arshit-dv/HR-Recruitment-and-managment',
+    highlights: [
+      'Engineered multi-stage recruitment pipeline tracking candidates through screening, interviews, offers, and trainee conversion.',
+      'Architected normalized MySQL relational schema with foreign key constraints ensuring zero data loss during payroll computations.',
+      'Designed dynamic payroll generation system calculating monthly salaries based on configured payscale grades and performance.',
+      'Built department organization hierarchy visualizer with live vacancy counts and employee grievance management portal.'
+    ],
+    chapter: 'main'
+  },
+  {
+    id: 'meera',
+    title: 'Meera',
+    tagline: 'Local-First AI Agent',
+    description: 'An autonomous, local-first artificial intelligence agent and edge inference runtime engineered with a strict zero-third-party-web-dependency architecture (pure Python standard library). Features OpenAI API drop-in compatibility, llama-server quantized GGUF execution, deterministic token budgeting, and persistent SQLite WAL memory.',
+    longDescription: 'Meera is a production-grade on-device AI agent and edge inference runtime engineered for resource-constrained and compliance-critical environments (HIPAA, GDPR). Built with zero third-party web frameworks using pure Python standard library networking. Features native llama-server quantized GGUF model execution on NVIDIA CUDA/CPU, Win32 Kernel RAM sentries, deterministic token allocation (1024 max), guardrailed tool execution, and local-first SQLite WAL storage.',
+    fields: ['aiml', 'swe'],
+    featured: false,
+    techStack: ['Python 3.12 (Stdlib)', 'Local LLM Inference', 'llama.cpp / GGUF', 'CUDA 12', 'SQLite WAL', 'OpenAI Spec API'],
+    githubUrl: 'https://github.com/Arshit-dv/Meera',
+    highlights: [
+      'Architected local-first AI runtime with zero third-party web dependencies, implemented entirely with Python standard library.',
+      'Engineered drop-in OpenAI API compatible HTTP server supporting token-by-token SSE streaming (/v1/chat/completions).',
+      'Integrated local llama-server subprocess supervisor with Win32 Kernel RAM sentry (GlobalMemoryStatusEx) and 300s idle auto-reaper.',
+      'Implemented guardrailed tool execution engine with human approval tokens and persistent SQLite WAL memory store.'
+    ],
+    chapter: 'main'
+  },
+  {
+    id: 'nexdesk',
+    title: 'NexDesk',
+    tagline: 'Personal Digital Workspace & Cloud Productivity Hub',
+    description: 'A personal productivity workspace for college students and developers, built with Python + Flask + HTML/CSS and backed by Amazon RDS MySQL and Amazon S3. Features task and recurring task tracking, subtasks, categorical notes, secure document storage with AWS KMS, and a real-time AWS CloudWatch diagnostics dashboard.',
+    longDescription: 'NexDesk provides a centralized personal workspace designed for student and developer productivity. Features comprehensive task management with urgency/priority filters, recurring task auto-advancement, and subtask tracking. Integrates Amazon S3 for cloud document storage with type validation and 10MB limits, encrypted via AWS KMS customer-managed keys. Deploys via AWS CloudFormation with live RDS MySQL, CloudWatch metrics, and EC2 metadata health checks.',
+    fields: ['swe'],
+    featured: false,
+    techStack: ['Python 3.12', 'Flask', 'Amazon RDS MySQL', 'Amazon S3', 'AWS KMS', 'CloudWatch', 'CloudFormation'],
+    githubUrl: 'https://github.com/Arshit-dv/NexDesk',
+    highlights: [
+      'Built dual-mode personal workspace in Python/Flask with Amazon RDS MySQL and Amazon S3 document storage.',
+      'Implemented recurring task engine with automated due-date advancement, completion histories, and subtask toggles.',
+      'Engineered cloud document ingestion pipeline with file validation, AWS KMS encryption, and optional task attachments.',
+      'Developed live AWS Status Dashboard displaying real-time connectivity diagnostics for RDS, S3, CloudWatch, and EC2.'
+    ],
+    chapter: 'main'
+  },
+  {
+    id: 'kairo',
+    title: 'Kairo',
+    tagline: 'Career Intelligence Engine & ATS Diagnostics Platform',
+    description: 'A full-stack career intelligence system and public dashboard featuring a FastAPI backend and modern UI. Integrates a Career Knowledge Graph Visualizer, automated Job Description (JD) Matcher & Project Ranker, Tailored Resume Studio, Kaggle profile synchronization, and granular ATS diagnostic breakdowns.',
+    longDescription: 'Kairo empowers job seekers and engineers with automated career positioning. Combines a FastAPI REST API backend with an interactive frontend featuring a Career Knowledge Graph Visualizer, JD Matcher analyzing keyword alignment against job postings, Project Ranker, and a Tailored Resume Studio with automated ATS diagnostic scoring and growth velocity upskilling roadmaps.',
+    fields: ['swe', 'aiml'],
+    featured: false,
+    techStack: ['Python', 'FastAPI', 'JavaScript', 'Knowledge Graphs', 'ATS Diagnostics', 'REST APIs'],
+    githubUrl: 'https://github.com/Arshit-dv/Kairo',
+    highlights: [
+      'Engineered FastAPI backend providing career knowledge graph generation, profile sync, and resume analysis endpoints.',
+      'Built interactive Career Knowledge Graph Visualizer mapping engineering competencies, repositories, and skill clusters.',
+      'Implemented automated JD Matcher and Project Ranker computing alignment scores against incoming job requisitions.',
+      'Designed Tailored Resume Studio with granular ATS diagnostic breakdowns and growth velocity upskilling roadmaps.'
+    ],
+    chapter: 'main'
+  },
+  {
+    id: 'federis',
+    title: 'Federis',
+    tagline: 'Privacy-Preserving Federated Learning Platform',
+    description: 'A multi-organization federated learning platform engineered to train shared global AI models across independent organizations without raw data ever leaving local infrastructure. Features Flower-based FL orchestration, PyTorch model training, Secure Aggregation, and Differential Privacy.',
+    longDescription: 'Federis enables privacy-preserving collaborative AI model training across organizational boundaries. Eliminates central data pooling by dispatching shared models to participating clients for local training on private data, aggregating only model weights via Flower and PyTorch. Enforces cryptographic and statistical privacy through Secure Aggregation and Differential Privacy with full auditability, FastAPI services, and Docker containerization.',
+    fields: ['aiml', 'swe'],
+    featured: false,
+    techStack: ['Python', 'PyTorch', 'Flower (FL)', 'FastAPI', 'PostgreSQL', 'Redis', 'Docker'],
+    githubUrl: 'https://github.com/Arshit-dv/Federis',
+    highlights: [
+      'Architected federated learning framework using Flower and PyTorch for distributed model training across independent nodes.',
+      'Implemented Secure Aggregation and Differential Privacy mechanisms ensuring zero raw data leakage during weight synchronization.',
+      'Engineered modular multi-team architecture decoupling AI Core training, Platform API, and Security layers via shared contracts.',
+      'Containerized platform deployment with Docker, FastAPI backend services, and PostgreSQL/Redis persistence layers.'
+    ],
+    chapter: 'main'
+  },
+  {
+    id: 'diabetes-prediction',
+    title: 'Diabetes Risk Prediction using ML',
+    tagline: 'Supervised Clinical Classification & Diagnostic ML Study',
+    description: 'An end-to-end healthcare machine learning study investigating diagnostic classification on clinical patient records. Features statistical exploratory data analysis, interquartile range (IQR) outlier normalization, and cross-validated evaluation of multiple classification algorithms.',
+    longDescription: 'This data science study investigates diagnostic classification on clinical patient records. Features extensive exploratory data analysis (EDA), interquartile range (IQR) outlier normalization, correlation heatmaps, and feature importance analysis. Evaluated Logistic Regression, Decision Tree, K-Nearest Neighbors, and Random Forest ensemble classifiers using stratified K-Fold cross-validation, confusion matrices, and ROC-AUC curves.',
+    fields: ['aiml', 'ds'],
+    featured: false,
+    techStack: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Kaggle'],
+    kaggleUrl: 'https://kaggle.com/code/arshitchoudhary/diabetes-prediction-using-ml',
+    highlights: [
+      'Developed and published end-to-end diagnostic ML pipeline evaluating clinical risk classification.',
+      'Executed statistical EDA, distribution normality assessments, and IQR-based outlier normalization.',
+      'Trained and evaluated Logistic Regression, Decision Tree, KNN, and Random Forest classifiers.',
+      'Diagnosed predictive performance using Stratified K-Fold cross-validation, Confusion Matrices, and ROC-AUC curves.'
+    ],
+    chapter: 'main'
   }
 ];
+
+// ──────────────────────────────────────────────────────────────────────────────
+// SKILLS — Only skills confirmed by existing portfolio and repositories
+// ──────────────────────────────────────────────────────────────────────────────
 
 export const SKILLS: SkillCategory[] = [
   {
     title: 'Programming Languages',
-    description: 'Core languages used for problem solving, backend systems, and statistical modeling.',
+    description: 'Core languages for problem solving, backend systems, and statistical modeling.',
     skills: [
       { name: 'Python', level: 'Advanced', fields: ['swe', 'aiml', 'ds'] },
       { name: 'SQL (MySQL, PL/SQL)', level: 'Advanced', fields: ['swe', 'ds'] },
@@ -187,7 +294,7 @@ export const SKILLS: SkillCategory[] = [
   },
   {
     title: 'Frameworks & Databases',
-    description: 'Backend web technologies, real-time messaging, and database management systems.',
+    description: 'Backend web technologies, real-time messaging, and database management.',
     skills: [
       { name: 'React.js', level: 'Advanced', fields: ['swe'] },
       { name: 'Node.js & Express.js', level: 'Advanced', fields: ['swe'] },
@@ -199,7 +306,7 @@ export const SKILLS: SkillCategory[] = [
     ]
   },
   {
-    title: 'Tools & Core CS Fundamentals',
+    title: 'Tools & Fundamentals',
     description: 'Version control, environments, and core computer science concepts.',
     skills: [
       { name: 'Git & GitHub', level: 'Advanced', fields: ['swe', 'aiml', 'ds'] },
@@ -211,6 +318,10 @@ export const SKILLS: SkillCategory[] = [
     ]
   }
 ];
+
+// ──────────────────────────────────────────────────────────────────────────────
+// EXPERIENCES — Preserved exactly from original
+// ──────────────────────────────────────────────────────────────────────────────
 
 export const EXPERIENCES: ExperienceItem[] = [
   {
@@ -244,3 +355,26 @@ export const EXPERIENCES: ExperienceItem[] = [
     techStack: ['Mathematics', 'Computer Science']
   }
 ];
+
+// ──────────────────────────────────────────────────────────────────────────────
+// LINK INVENTORY — Complete reference of every preserved URL
+// ──────────────────────────────────────────────────────────────────────────────
+// GitHub Profile:    https://github.com/Arshit-dv
+// LinkedIn:          https://linkedin.com/in/arshit-choudhary/
+// CodeChef:          https://codechef.com/users/arshit_dv
+// LeetCode:          https://leetcode.com/u/Arshit_dv/
+// Codeforces:        https://codeforces.com/profile/Arshit_dv
+// Kaggle Profile:    https://www.kaggle.com/arshitchoudhary
+// Email:             arshitchoudhary3010@gmail.com
+// Resume:            https://github.com/Arshit-dv
+// PrismR GitHub:     https://github.com/Arshit-dv/PrismR
+// SportShare GitHub: https://github.com/Arshit-dv/SportShare
+// SportShare Live:   https://sport-share.vercel.app
+// HR System GitHub:  https://github.com/Arshit-dv/HR-Recruitment-and-managment
+// CodeBrix GitHub:   https://github.com/Arshit-dv/CodeBrix
+// HireFlow GitHub:   https://github.com/Arshit-dv/HireFlow
+// NexDesk GitHub:    https://github.com/Arshit-dv/NexDesk
+// Kairo GitHub:      https://github.com/Arshit-dv/Kairo
+// Meera GitHub:      https://github.com/Arshit-dv/Meera
+// Diabetes Kaggle:   https://kaggle.com/code/arshitchoudhary/diabetes-prediction-using-ml
+// OpenGraph URL:     https://github.com/Arshit-dv

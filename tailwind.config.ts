@@ -6,70 +6,44 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        background: "#09090B",
-        surface: {
-          DEFAULT: "#18181B",
-          subtle: "#121215",
-          hover: "#222226",
-        },
-        border: {
-          DEFAULT: "#27272A",
-          subtle: "#1F1F23",
-          accent: "#3F3F46",
-        },
-        primary: {
-          DEFAULT: "#3B82F6",
-          hover: "#2563EB",
-          glow: "rgba(59, 130, 246, 0.15)",
-        },
-        secondary: {
-          DEFAULT: "#8B5CF6",
-          hover: "#7C3AED",
-          glow: "rgba(139, 92, 246, 0.15)",
-        },
-        text: {
-          DEFAULT: "#FAFAFA",
-          muted: "#A1A1AA",
-          dim: "#71717A",
-        },
+        paper: '#F5F0E8',
+        'paper-light': '#FAF7F2',
+        'paper-dark': '#EDE6D6',
+        'paper-darker': '#D9D0BE',
+        ink: '#1A1A1A',
+        'ink-light': '#3D3D3D',
+        'ink-muted': '#6B6B6B',
+        'ink-faint': '#9A9A9A',
+        vermilion: '#E63B2E',
+        'vermilion-dark': '#C42F24',
+        'vermilion-light': '#FF5A4F',
       },
       fontFamily: {
-        sans: ["var(--font-jakarta)", "Plus Jakarta Sans", "Inter", "system-ui", "sans-serif"],
-        mono: ["JetBrains Mono", "Geist Mono", "monospace"],
+        display: ['"Playfair Display"', 'Georgia', 'serif'],
+        body: ['"Source Serif 4"', 'Georgia', 'serif'],
+        mono: ['"JetBrains Mono"', '"Fira Code"', 'monospace'],
+        sans: ['"Inter"', 'system-ui', 'sans-serif'],
       },
       animation: {
-        "spotlight": "spotlight 2s ease .5s 1 forwards",
-        "shimmer": "shimmer 2.5s linear infinite",
-        "pulse-glow": "pulse-glow 4s ease-in-out infinite",
-        "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
-        "float": "float 6s ease-in-out infinite",
+        'fade-in': 'fadeIn 0.6s ease-out forwards',
+        'slide-up': 'slideUp 0.5s ease-out forwards',
+        'draw-line': 'drawLine 1s ease-out forwards',
       },
       keyframes: {
-        spotlight: {
-          "0%": {
-            opacity: "0",
-            transform: "translate(-72%, -62%) scale(0.5)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translate(-50%,-40%) scale(1)",
-          },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
-        shimmer: {
-          from: { backgroundPosition: "0 0" },
-          to: { backgroundPosition: "-200% 0" },
+        slideUp: {
+          '0%': { opacity: '0', transform: 'translateY(24px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        "pulse-glow": {
-          "0%, 100%": { opacity: "0.4", transform: "scale(1)" },
-          "50%": { opacity: "0.8", transform: "scale(1.05)" },
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-10px)" },
+        drawLine: {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
         },
       },
     },

@@ -1,21 +1,21 @@
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import ProjectsSection from '@/components/ProjectsSection';
-import SkillsSection from '@/components/SkillsSection';
-import ExperienceSection from '@/components/ExperienceSection';
-import ContactSection from '@/components/ContactSection';
-import Footer from '@/components/Footer';
+import ChapterCover from '@/components/ChapterCover';
+import ChapterAbout from '@/components/ChapterAbout';
+import ChapterProjects from '@/components/ChapterProjects';
+import ChapterSkills from '@/components/ChapterSkills';
+import ChapterDirectory from '@/components/ChapterDirectory';
+import ChapterContact from '@/components/ChapterContact';
+import ChapterNav from '@/components/ChapterNav';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0a0a0c] text-zinc-100 selection:bg-zinc-700/40 selection:text-white relative">
-      <Navbar />
-      <Hero />
-      <ProjectsSection />
-      <SkillsSection />
-      <ExperienceSection />
-      <ContactSection />
-      <Footer />
+    <main className="min-h-screen bg-paper text-ink relative">
+      <ChapterNav />
+      <ChapterCover />
+      <ChapterAbout />
+      <ChapterProjects />
+      <ChapterSkills />
+      <ChapterDirectory />
+      <ChapterContact />
     </main>
   );
 }

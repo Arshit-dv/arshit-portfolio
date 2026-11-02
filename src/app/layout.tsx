@@ -1,17 +1,10 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { PERSONAL_INFO } from "@/data/portfolioData";
 
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-jakarta",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: `${PERSONAL_INFO.name} | Computer Science & AI Portfolio`,
-  description: `${PERSONAL_INFO.name} - Computer Science undergraduate specializing in Software Engineering, AI & Machine Learning, and Data Science.`,
+  title: `${PERSONAL_INFO.name} — The Developer's Chronicle`,
+  description: `${PERSONAL_INFO.name} - Computer Science undergraduate specializing in Software Engineering, AI & Machine Learning, and Data Science. A developer's chronicle of projects, experiments, and technical discoveries.`,
   keywords: [
     "Computer Science",
     "Software Engineer",
@@ -29,13 +22,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://github.com/Arshit-dv",
-    title: `${PERSONAL_INFO.name} | Software Engineer & AI Specialist`,
+    title: `${PERSONAL_INFO.name} — The Developer's Chronicle`,
     description: PERSONAL_INFO.aboutMe,
-    siteName: `${PERSONAL_INFO.name} Portfolio`,
+    siteName: `${PERSONAL_INFO.name} — Chronicle`,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${PERSONAL_INFO.name} | Computer Science Portfolio`,
+    title: `${PERSONAL_INFO.name} — The Developer's Chronicle`,
     description: PERSONAL_INFO.aboutMe,
   },
   robots: {
@@ -66,6 +59,7 @@ export default function RootLayout({
     "sameAs": [
       PERSONAL_INFO.github,
       PERSONAL_INFO.linkedin,
+      PERSONAL_INFO.kaggle,
       PERSONAL_INFO.codechef,
       PERSONAL_INFO.leetcode,
       PERSONAL_INFO.codeforces
@@ -73,14 +67,14 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${jakarta.variable} font-sans bg-[#0a0a0c] text-zinc-100 antialiased selection:bg-zinc-700/40 selection:text-white`}>
+      <body className="font-body bg-paper text-ink antialiased">
         {children}
       </body>
     </html>
