@@ -73,7 +73,7 @@ export default function ChapterProjects() {
               02
             </span>
             <div>
-              <span className="editorial-label text-vermilion block mb-1">
+              <span className="chapter-label text-vermilion block mb-1">
                 Chapter Two
               </span>
               <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">
@@ -86,7 +86,7 @@ export default function ChapterProjects() {
         {/* Narrative Intro & Filter Bar */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-8 border-b-2 border-ink mb-12">
           <div>
-            <p className="font-body text-base text-ink-muted max-w-2xl leading-relaxed">
+            <p className="font-body text-lg text-ink-muted max-w-2xl leading-relaxed">
               Every project, framework, and exploratory analytical model in one unified chronicle.
               From published statistical R packages and distributed real-time platforms to machine learning pipelines.
             </p>
@@ -115,7 +115,7 @@ export default function ChapterProjects() {
           {filteredProjects.map((project, idx) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: idx * 0.05 }}
@@ -140,15 +140,15 @@ export default function ChapterProjects() {
                 </div>
 
                 {/* Title & Tagline */}
-                <h3 className="font-display text-xl font-bold tracking-tight text-ink group-hover:text-vermilion transition-colors mb-1">
+                <h3 className="font-display text-2xl font-bold tracking-tight text-ink group-hover:text-vermilion transition-colors mb-1">
                   {project.title}
                 </h3>
-                <p className="font-mono text-[11px] text-vermilion font-semibold uppercase tracking-wider mb-3">
+                <p className="font-novel italic text-sm text-vermilion font-medium mb-3">
                   {project.tagline}
                 </p>
 
                 {/* Description */}
-                <p className="font-body text-sm text-ink-light leading-relaxed mb-4">
+                <p className="font-body text-base text-ink-light leading-relaxed mb-4">
                   {project.description}
                 </p>
 
@@ -156,7 +156,7 @@ export default function ChapterProjects() {
                 {project.highlights && project.highlights.length > 0 && (
                   <ul className="space-y-1.5 border-t border-ink/10 pt-3 mb-4">
                     {project.highlights.slice(0, 2).map((highlight, hIdx) => (
-                      <li key={hIdx} className="flex items-start gap-2 text-xs font-body text-ink-muted">
+                      <li key={hIdx} className="flex items-start gap-2 text-sm font-body text-ink-muted">
                         <span className="text-vermilion font-bold shrink-0 mt-0.5">—</span>
                         <span className="leading-relaxed">{highlight}</span>
                       </li>

@@ -22,8 +22,10 @@ const config: Config = {
         'vermilion-light': '#FF5A4F',
       },
       fontFamily: {
-        display: ['"Playfair Display"', 'Georgia', 'serif'],
-        body: ['"Source Serif 4"', 'Georgia', 'serif'],
+        novel: ['"EB Garamond"', '"Cormorant Garamond"', 'Georgia', 'serif'],
+        display: ['"Cormorant Garamond"', '"Playfair Display"', 'Georgia', 'serif'],
+        body: ['"EB Garamond"', '"Source Serif 4"', 'Georgia', 'serif'],
+        chapter: ['"Cinzel"', '"Playfair Display"', 'Georgia', 'serif'],
         mono: ['"JetBrains Mono"', '"Fira Code"', 'monospace'],
         sans: ['"Inter"', 'system-ui', 'sans-serif'],
       },

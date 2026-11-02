@@ -149,10 +149,10 @@ export default function ProjectsCatalogPage() {
                 <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-ink mb-1">
                   {project.title}
                 </h2>
-                <p className="font-mono text-xs md:text-sm text-vermilion font-semibold uppercase tracking-wider mb-4">
+                <p className="font-novel italic text-base text-vermilion font-medium mb-4">
                   {project.tagline}
                 </p>
-                <p className="font-body text-base md:text-lg text-ink-light leading-relaxed max-w-4xl">
+                <p className="font-body text-lg md:text-xl text-ink-light leading-[1.85] max-w-4xl">
                   {project.longDescription || project.description}
                 </p>
               </div>
@@ -165,7 +165,7 @@ export default function ProjectsCatalogPage() {
                   </h3>
                   <ul className="space-y-2">
                     {project.highlights.map((highlight, hIdx) => (
-                      <li key={hIdx} className="flex items-start gap-2.5 text-sm font-body text-ink/90">
+                      <li key={hIdx} className="flex items-start gap-2.5 text-base font-body text-ink/90">
                         <span className="text-vermilion font-bold shrink-0 mt-0.5">❖</span>
                         <span className="leading-relaxed">{highlight}</span>
                       </li>

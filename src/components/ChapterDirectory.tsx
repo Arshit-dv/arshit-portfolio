@@ -17,7 +17,7 @@ export default function ChapterDirectory() {
               04
             </span>
             <div>
-              <span className="editorial-label text-vermilion block mb-1">
+              <span className="chapter-label text-vermilion block mb-1">
                 Chapter Four
               </span>
               <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">
@@ -27,7 +27,7 @@ export default function ChapterDirectory() {
           </div>
         </div>
 
-        <p className="font-body text-base text-ink-muted max-w-2xl mb-12 leading-relaxed">
+        <p className="font-body text-lg text-ink-muted max-w-2xl mb-12 leading-relaxed">
           An exhaustive ledger documenting academic history, competitive problem-solving records,
           and a centralized index of all repositories and published works.
         </p>
@@ -67,14 +67,14 @@ export default function ChapterDirectory() {
                     </span>
                   </div>
 
-                  <p className="font-body text-sm text-ink-muted mb-4 leading-relaxed">
+                  <p className="font-body text-base text-ink-light mb-4 leading-relaxed">
                     {exp.summary}
                   </p>
 
                   {exp.achievements.length > 0 && (
                     <div className="space-y-2 mb-6">
                       {exp.achievements.map((ach, i) => (
-                        <div key={i} className="flex items-start gap-2 text-xs font-body text-ink/80">
+                        <div key={i} className="flex items-start gap-2 text-sm font-body text-ink/80">
                           <span className="text-vermilion font-bold shrink-0">❖</span>
                           <span>{ach}</span>
                         </div>
@@ -266,10 +266,10 @@ export default function ChapterDirectory() {
                       #{String(idx + 1).padStart(2, '0')}
                     </td>
                     <td className="p-3 md:p-4">
-                      <span className="font-bold text-sm text-ink block font-display">
+                      <span className="font-bold text-base text-ink block font-display">
                         {proj.title}
                       </span>
-                      <span className="font-body text-[11px] text-ink-muted hidden sm:inline">
+                      <span className="font-novel italic text-xs text-ink-muted hidden sm:inline">
                         {proj.tagline}
                       </span>
                     </td>

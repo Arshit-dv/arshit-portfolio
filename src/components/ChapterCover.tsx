@@ -71,7 +71,7 @@ export default function ChapterCover() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="space-y-4 relative z-10"
               >
-                <div className="editorial-label text-vermilion">
+                <div className="chapter-label text-vermilion">
                   The Developer&apos;s Chronicle
                 </div>
 
@@ -92,6 +92,11 @@ export default function ChapterCover() {
                     <span className="animate-pulse text-vermilion font-bold ml-0.5">|</span>
                   </span>
                 </div>
+
+                {/* Literary Book Subtitle */}
+                <p className="font-novel italic text-base sm:text-lg md:text-xl text-ink-muted max-w-xl leading-relaxed pt-1">
+                  A chronicle of software engineering systems, statistical algorithms, and artificial intelligence architectures.
+                </p>
               </motion.div>
 
               {/* CTA buttons */}

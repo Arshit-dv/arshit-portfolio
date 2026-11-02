@@ -20,7 +20,7 @@ export default function ChapterAbout() {
               01
             </span>
             <div>
-              <span className="editorial-label text-vermilion block mb-1">
+              <span className="chapter-label text-vermilion block mb-1">
                 Chapter One
               </span>
               <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">
@@ -40,17 +40,17 @@ export default function ChapterAbout() {
             viewport={{ once: true, margin: '-100px' }}
             variants={fadeUp}
           >
-            {/* Large pull quote */}
-            <div className="border-l-[4px] border-vermilion pl-6">
-              <p className="font-display text-xl md:text-2xl leading-relaxed text-ink font-medium italic">
+            {/* Large novel epigraph quote */}
+            <div className="border-l-[3px] border-vermilion pl-6 py-1">
+              <p className="novel-epigraph text-xl md:text-2xl leading-relaxed text-ink">
                 &ldquo;Building scalable software, intelligent systems, and data-driven applications
                 that solve real-world problems.&rdquo;
               </p>
             </div>
 
-            {/* Body text */}
+            {/* Body text with authentic novel drop cap */}
             <div className="space-y-4">
-              <p className="font-body text-base md:text-lg leading-[1.8] text-ink-light">
+              <p className="novel-dropcap font-body text-lg md:text-xl leading-[1.9] text-ink/90">
                 {PERSONAL_INFO.aboutMe}
               </p>
 
@@ -58,7 +58,7 @@ export default function ChapterAbout() {
                 {PERSONAL_INFO.roleTitles.map((role) => (
                   <span
                     key={role}
-                    className="inline-block px-3 py-1 border-[2px] border-ink font-mono text-[10px] font-bold uppercase tracking-wider"
+                    className="inline-block px-3 py-1 border-[2px] border-ink font-mono text-[10px] font-bold uppercase tracking-wider bg-paper-light"
                   >
                     {role}
                   </span>
@@ -76,8 +76,8 @@ export default function ChapterAbout() {
                   key={exp.id}
                   className="border-[2px] border-ink p-4 md:p-5 hover:shadow-brutal-sm transition-all duration-150"
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
-                    <h4 className="font-sans text-sm font-bold text-ink">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                    <h4 className="font-display text-base md:text-lg font-bold text-ink">
                       {exp.role}
                     </h4>
                     <span className="font-mono text-[10px] text-ink-muted uppercase">
@@ -87,7 +87,7 @@ export default function ChapterAbout() {
                   <p className="font-mono text-xs text-vermilion font-medium">
                     {exp.company} • {exp.location}
                   </p>
-                  <p className="font-body text-sm text-ink-light mt-2 leading-relaxed">
+                  <p className="font-body text-base text-ink-light mt-2 leading-relaxed">
                     {exp.summary}
                   </p>
                   <div className="flex flex-wrap gap-1.5 mt-3">
@@ -128,10 +128,10 @@ export default function ChapterAbout() {
                       {String(idx + 1).padStart(2, '0')}
                     </span>
                     <div>
-                      <h5 className="font-sans text-sm font-bold text-ink">
+                      <h5 className="font-display text-base font-bold text-ink">
                         {ach.title}
                       </h5>
-                      <p className="font-body text-xs text-ink-muted leading-relaxed mt-0.5">
+                      <p className="font-body text-sm text-ink-muted leading-relaxed mt-0.5">
                         {ach.desc}
                       </p>
                     </div>
@@ -157,7 +157,7 @@ export default function ChapterAbout() {
                     <dt className="font-mono text-[10px] text-ink-muted uppercase tracking-wider shrink-0">
                       {item.label}
                     </dt>
-                    <dd className="font-sans text-sm font-semibold text-ink text-right">
+                    <dd className="font-novel text-base font-semibold text-ink text-right">
                       {item.value}
                     </dd>
                   </div>

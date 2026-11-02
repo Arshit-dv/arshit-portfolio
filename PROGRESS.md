@@ -25,8 +25,10 @@ Transform Arshit Choudhary’s developer portfolio from a conventional portfolio
 Transforming the developer portfolio into **The Developer’s Chronicle**:
 - **Format:** Part illustrated novel, part manga chapter structure, part technical engineering journal.
 - **Palette:** Warm off-white paper (`#F5F0E8`), rich black ink (`#1A1A1A`), vermilion red accent (`#E63B2E`).
-- **Typography:** Editorial serifs (*Playfair Display*, *Source Serif 4*), technical monospaces (*JetBrains Mono*), clean sans (*Inter*).
-- **Styling:** Neo-brutalist panel borders (`border-[3px]`), offset hard shadows (`4px 4px 0px #1A1A1A`), subtle SVG paper textures, halftone dot patterns. Zero generic AI glassmorphism, zero purple## 🔗 Link Integrity & Audit Checklist (Zero Hallucination Guarantee)
+- **Typography:** Authentic literary novel serifs (*EB Garamond*, *Cormorant Garamond*, *Cinzel*, *Playfair Display*), technical monospaces (*JetBrains Mono*), clean sans (*Inter*). Features classical drop caps, literary epigraphs, and book-reading line heights.
+- **Styling:** Neo-brutalist panel borders (`border-[3px]`), offset hard shadows (`4px 4px 0px #1A1A1A`), subtle SVG paper textures, halftone dot patterns. Zero generic AI glassmorphism, zero purple.
+
+## 🔗 Link Integrity & Audit Checklist (Zero Hallucination Guarantee)
 
 Every single URL and profile link from the original portfolio and repositories is preserved 1:1, ordered by profile impact:
 
@@ -82,6 +84,8 @@ Every single URL and profile link from the original portfolio and repositories i
 - [x] **SportShare Description**: Grounded as "Real-Time Communication Project" with Socket.io WebSockets, atomic Firebase-to-MongoDB ID-Sync middleware, and live URL.
 - [x] **Federis Description**: Grounded as "Privacy-Preserving Federated Learning Platform" with Flower FL orchestration, PyTorch model training, Secure Aggregation, and Differential Privacy.
 - [x] **Sidebar Navigation Theme Refinement ([src/components/ChapterNav.tsx](file:///c:/Users/Arshit/Desktop/Overlord/portfolio/src/components/ChapterNav.tsx))**: Refined subsection circles with light paper-light fill (`bg-paper-light`), 1px delicate borders (`border-ink/15`), fine vermilion active accent (`border-vermilion/60 text-vermilion font-medium`), zero black fill, and gentle hover tooltips.
+- [x] **Novel Book Typography Overhaul**: Integrated classical book publishing fonts (*EB Garamond*, *Cormorant Garamond*, *Cinzel*), authentic book illuminated drop caps (`.novel-dropcap`), literary epigraphs (`.novel-epigraph`), book-prose leading (`leading-[1.85]`), and novel subtitle styling across all chapters and the catalog page.
+- [x] **Chapter Marker Novel Typography (`.chapter-label`)**: Updated "Chapter Three", "Chapter One", "Chapter Two", "Chapter Four", and "Postscript & Colophon" from tiny monospace to classical Roman serif small-caps typography (*Cinzel* with `tracking-[0.25em]` and vermilion accent).
 - [x] **Live Review & Deployment**: Active on `http://localhost:3000` via running `npm run dev`.
 
 ---

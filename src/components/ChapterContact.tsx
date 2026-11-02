@@ -29,7 +29,7 @@ export default function ChapterContact() {
               ∞
             </span>
             <div>
-              <span className="editorial-label text-vermilion block mb-1">
+              <span className="chapter-label text-vermilion block mb-1">
                 Postscript & Colophon
               </span>
               <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">
@@ -46,7 +46,7 @@ export default function ChapterContact() {
             <h3 className="font-display text-2xl md:text-4xl font-bold mb-4">
               Open for Technical Discussion, Engineering Roles & Open-Source.
             </h3>
-            <p className="font-body text-base md:text-lg text-ink-muted leading-relaxed max-w-3xl">
+            <p className="font-body text-lg md:text-xl text-ink-muted leading-relaxed max-w-3xl">
               Whether you are exploring scalable full-stack architectures, pre-modeling statistical
               validation pipelines, or competitive algorithms, my correspondence channels are always open.
             </p>
@@ -125,10 +125,10 @@ export default function ChapterContact() {
 
             {/* Publication details */}
             <div className="md:col-span-10 space-y-2">
-              <span className="font-display text-xl font-bold block">
+              <span className="font-display text-2xl font-bold block">
                 {PERSONAL_INFO.name} — The Developer’s Chronicle
               </span>
-              <p className="font-body text-xs text-ink-muted leading-relaxed max-w-lg">
+              <p className="font-novel italic text-sm text-ink-muted leading-relaxed max-w-lg">
                 An editorial portfolio designed as a living record of software engineering,
                 statistical validation frameworks, and applied machine learning.
               </p>

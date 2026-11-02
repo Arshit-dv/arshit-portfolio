@@ -27,7 +27,7 @@ export default function ChapterSkills() {
               03
             </span>
             <div>
-              <span className="editorial-label text-vermilion block mb-1">
+              <span className="chapter-label text-vermilion block mb-1">
                 Chapter Three
               </span>
               <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">
@@ -39,7 +39,7 @@ export default function ChapterSkills() {
 
         {/* Narrative & Discipline Filter Toolbar */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-ink/20 mb-12">
-          <p className="font-body text-base text-ink-muted max-w-2xl leading-relaxed">
+          <p className="font-body text-lg text-ink-muted max-w-2xl leading-relaxed">
             A classified index of programming languages, machine learning frameworks,
             database engines, and system architecture tools. Every tool listed represents
             hands-on development through production projects, algorithmic problem solving,
@@ -98,7 +98,7 @@ export default function ChapterSkills() {
                   </div>
 
                   {/* Category Description */}
-                  <p className="font-body text-xs text-ink-muted mb-6 italic">
+                  <p className="font-novel italic text-sm text-ink-muted mb-6">
                     {category.description}
                   </p>
 
@@ -113,7 +113,7 @@ export default function ChapterSkills() {
                           <span className="font-mono text-xs text-ink-muted opacity-40 group-hover:opacity-100 group-hover:text-vermilion transition-opacity">
                             ▸
                           </span>
-                          <span className="font-mono text-sm font-semibold text-ink group-hover:text-vermilion transition-colors">
+                          <span className="font-novel text-base font-semibold text-ink group-hover:text-vermilion transition-colors">
                             {skill.name}
                           </span>
                         </div>
