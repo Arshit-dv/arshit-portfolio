@@ -98,17 +98,17 @@ export default function ChapterNav() {
               >
                 {/* Subtle Light Hover-Only Tooltip */}
                 <div className="absolute right-10 transition-all duration-200 pointer-events-none opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 hidden md:flex items-center">
-                  <span className="px-2.5 py-1 rounded-full text-[11px] font-mono font-normal tracking-wide bg-paper-light/95 backdrop-blur-md border border-ink/15 text-ink/70 shadow-xs whitespace-nowrap">
+                  <span className="px-2.5 py-1 rounded-full text-[11px] font-mono font-normal tracking-wide bg-paper-darker/95 backdrop-blur-md border border-stone/40 text-ink/85 shadow-sm whitespace-nowrap">
                     {ch.label} · {ch.title}
                   </span>
                 </div>
 
-                {/* Round Smooth Individual Subsection Circle — Light theme, no black fill, not bold */}
+                {/* Round Smooth Individual Subsection Circle */}
                 <span
                   className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-mono text-[11px] sm:text-xs transition-all duration-200 ${
                     isActive
-                      ? 'bg-paper-light border border-vermilion/60 text-vermilion font-medium shadow-xs scale-105'
-                      : 'bg-paper-light/75 backdrop-blur-sm border border-ink/15 text-ink/45 font-normal hover:border-ink/30 hover:text-ink/75 hover:bg-paper-light'
+                      ? 'bg-paper-darker border border-vermilion/70 text-vermilion font-medium shadow-sm scale-105'
+                      : 'bg-paper-darker/85 backdrop-blur-sm border border-stone/30 text-ink/45 font-normal hover:border-stone/60 hover:text-ink/85 hover:bg-paper-darker'
                   }`}
                 >
                   {ch.label}

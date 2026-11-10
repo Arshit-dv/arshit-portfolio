@@ -108,13 +108,13 @@ export default function ChapterCover() {
               >
                 <a
                   href="#projects"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-ink text-paper font-mono text-xs font-bold uppercase tracking-widest border-[3px] border-ink shadow-brutal hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-150"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-obsidian text-ink font-mono text-xs font-bold uppercase tracking-widest border-[3px] border-stone shadow-brutal hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-150"
                 >
                   Read the Projects →
                 </a>
                 <a
                   href="#about"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-paper text-ink font-mono text-xs font-bold uppercase tracking-widest border-[3px] border-ink shadow-brutal-sm hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all duration-150"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-paper text-ink font-mono text-xs font-bold uppercase tracking-widest border-[3px] border-stone shadow-brutal-sm hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all duration-150"
                 >
                   About the Author
                 </a>
@@ -128,7 +128,7 @@ export default function ChapterCover() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="lg:col-span-4"
             >
-              <div className="border-[3px] border-ink p-6 bg-paper relative">
+              <div className="border-[3px] border-stone p-6 bg-paper relative">
                 <div className="absolute -top-3 left-4 bg-paper px-2">
                   <span className="editorial-label text-ink-muted">
                     Find the Author
@@ -140,9 +140,9 @@ export default function ChapterCover() {
                     { label: 'GitHub', href: PERSONAL_INFO.github, handle: '@Arshit-dv', icon: GithubIcon },
                     { label: 'LinkedIn', href: PERSONAL_INFO.linkedin, handle: 'arshit-choudhary', icon: LinkedinIcon },
                     { label: 'Kaggle', href: PERSONAL_INFO.kaggle, handle: '@arshitchoudhary', icon: KaggleIcon },
-                    { label: 'CodeChef', href: PERSONAL_INFO.codechef, handle: 'Global Rank 1096', icon: CodeChefIcon },
-                    { label: 'LeetCode', href: PERSONAL_INFO.leetcode, handle: 'DSA Practice', icon: LeetCodeIcon },
-                    { label: 'Codeforces', href: PERSONAL_INFO.codeforces, handle: 'Contest Divs', icon: CodeforcesIcon },
+                    { label: 'CodeChef', href: PERSONAL_INFO.codechef, handle: '@arshit_dv', icon: CodeChefIcon },
+                    { label: 'LeetCode', href: PERSONAL_INFO.leetcode, handle: '@Arshit_dv', icon: LeetCodeIcon },
+                    { label: 'Codeforces', href: PERSONAL_INFO.codeforces, handle: '@Arshit_dv', icon: CodeforcesIcon },
                   ].map((link) => {
                     const IconComponent = link.icon;
                     return (
@@ -151,19 +151,19 @@ export default function ChapterCover() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-between py-2 px-3 border border-ink/20 bg-paper-light hover:bg-ink hover:text-paper hover:border-ink transition-all duration-150 group shadow-brutal-sm hover:shadow-none hover:translate-x-[1px] hover:translate-y-[1px]"
+                        className="flex items-center justify-between py-2 px-3 border border-stone/35 bg-paper-light hover:bg-obsidian hover:text-ink hover:border-stone transition-all duration-150 group shadow-brutal-sm hover:shadow-none hover:translate-x-[1px] hover:translate-y-[1px]"
                         aria-label={link.label}
                       >
                         <div className="flex items-center gap-2.5">
                           <span className="w-6 h-6 flex items-center justify-center text-ink group-hover:text-vermilion transition-colors shrink-0">
                             <IconComponent className="w-4 h-4" />
                           </span>
-                          <span className="font-sans text-xs font-bold group-hover:text-paper">
+                          <span className="font-sans text-xs font-bold group-hover:text-ink">
                             {link.label}
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="font-mono text-[10px] text-ink-muted group-hover:text-paper/60 hidden sm:inline">
+                          <span className="font-mono text-[10px] text-ink-muted group-hover:text-ink/70 hidden sm:inline">
                             {link.handle}
                           </span>
                           <span className="font-mono text-xs text-ink-faint group-hover:text-vermilion">
@@ -176,7 +176,7 @@ export default function ChapterCover() {
                 </div>
 
                 {/* Bottom annotation */}
-                <div className="mt-4 pt-3 border-t-[2px] border-ink">
+                <div className="mt-4 pt-3 border-t-[2px] border-stone">
                   <a
                     href={`mailto:${PERSONAL_INFO.email}`}
                     className="flex items-center gap-2 font-mono text-[11px] text-ink-muted hover:text-vermilion transition-colors"
@@ -192,7 +192,7 @@ export default function ChapterCover() {
       </div>
 
       {/* Bottom bar — page marker */}
-      <div className="w-full border-t-[3px] border-ink">
+      <div className="w-full border-t-[3px] border-stone">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-3 flex items-center justify-between">
           <span className="font-mono text-[10px] text-ink-muted uppercase tracking-widest">
             {PERSONAL_INFO.university}

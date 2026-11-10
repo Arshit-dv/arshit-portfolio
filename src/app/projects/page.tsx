@@ -28,7 +28,7 @@ export default function ProjectsCatalogPage() {
   return (
     <div className="min-h-screen bg-paper text-ink paper-texture">
       {/* Top Banner Navigation */}
-      <header className="border-b-[3px] border-ink bg-paper-light sticky top-0 z-40">
+      <header className="border-b-[3px] border-stone bg-paper-light sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
           <Link
             href="/"
@@ -46,7 +46,7 @@ export default function ProjectsCatalogPage() {
       <main className="max-w-7xl mx-auto px-6 md:px-10 py-16">
         
         {/* Page Title & Mission */}
-        <div className="border-b-2 border-ink pb-8 mb-12">
+        <div className="border-b-2 border-stone pb-8 mb-12">
           <div className="editorial-label text-vermilion mb-2">COMPLETE TECHNICAL ARCHIVE</div>
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink mb-4">
             Projects, Systems & Applied Research
@@ -58,7 +58,7 @@ export default function ProjectsCatalogPage() {
         </div>
 
         {/* Search & Discipline Filter Bar */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 border-[3px] border-ink bg-paper-light shadow-brutal mb-12">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 border-[3px] border-stone bg-paper-light shadow-brutal mb-12">
           
           {/* Search Input */}
           <div className="flex-1 max-w-md">
@@ -69,7 +69,7 @@ export default function ProjectsCatalogPage() {
               placeholder="Search by keyword, language, or framework..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-4 py-2.5 bg-paper border-2 border-ink text-sm font-body text-ink focus:outline-none focus:border-vermilion"
+              className="w-full px-4 py-2.5 bg-paper border-2 border-stone text-sm font-body text-ink placeholder:text-ink-faint focus:outline-none focus:border-vermilion"
             />
           </div>
 
@@ -86,8 +86,8 @@ export default function ProjectsCatalogPage() {
                 onClick={() => setSelectedFilter(f.id as FilterField)}
                 className={`px-3 py-2 text-xs font-mono font-bold tracking-wider uppercase transition-colors border-2 ${
                   selectedFilter === f.id
-                    ? 'bg-ink text-paper border-ink'
-                    : 'bg-paper text-ink border-ink/40 hover:border-ink'
+                    ? 'bg-obsidian text-ink border-stone'
+                    : 'bg-paper text-ink border-stone/45 hover:border-stone'
                 }`}
               >
                 {f.label}
@@ -119,19 +119,19 @@ export default function ProjectsCatalogPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: idx * 0.05 }}
-              className="border-[3px] border-ink bg-paper-light p-6 md:p-10 shadow-brutal relative"
+              className="border-[3px] border-stone bg-paper-light p-6 md:p-10 shadow-brutal relative"
             >
               {/* Corner Dossier Stamp */}
-              <div className="flex items-center justify-between border-b-2 border-ink pb-4 mb-6">
+              <div className="flex items-center justify-between border-b-2 border-stone pb-4 mb-6">
                 <div className="flex items-center gap-3">
-                  <span className="font-mono text-sm font-bold bg-ink text-paper px-2.5 py-1">
+                  <span className="font-mono text-sm font-bold bg-obsidian text-ink border border-stone/60 px-2.5 py-1">
                     #{String(idx + 1).padStart(2, '0')}
                   </span>
                   <div className="flex gap-1.5 flex-wrap">
                     {project.fields.map((f) => (
                       <span
                         key={f}
-                        className="px-2 py-0.5 border border-ink font-mono text-[10px] uppercase font-bold text-ink"
+                        className="px-2 py-0.5 border border-stone font-mono text-[10px] uppercase font-bold text-ink"
                       >
                         {f}
                       </span>
@@ -159,7 +159,7 @@ export default function ProjectsCatalogPage() {
 
               {/* Detailed Highlights */}
               {project.highlights && project.highlights.length > 0 && (
-                <div className="mb-6 p-5 border-2 border-ink/30 bg-paper">
+                <div className="mb-6 p-5 border-2 border-stone/40 bg-paper">
                   <h3 className="font-mono text-xs font-bold uppercase text-ink-muted tracking-wider mb-3">
                     Architectural & Technical Highlights
                   </h3>
@@ -175,7 +175,7 @@ export default function ProjectsCatalogPage() {
               )}
 
               {/* Technologies & Action Links Strip */}
-              <div className="pt-6 border-t-2 border-ink flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div className="pt-6 border-t-2 border-stone flex flex-col md:flex-row md:items-center justify-between gap-6">
                 
                 {/* Tech Badges */}
                 <div className="flex flex-wrap items-center gap-2">
@@ -183,7 +183,7 @@ export default function ProjectsCatalogPage() {
                   {project.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2.5 py-1 bg-ink text-paper font-mono text-[11px] font-bold"
+                      className="px-2.5 py-1 bg-obsidian text-ink border border-stone/40 font-mono text-[11px] font-bold"
                     >
                       {tech}
                     </span>
@@ -197,7 +197,7 @@ export default function ProjectsCatalogPage() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 bg-ink text-paper font-mono text-xs font-bold uppercase tracking-wider hover:bg-vermilion transition-colors border-2 border-ink shadow-brutal-sm"
+                      className="px-4 py-2 bg-obsidian text-ink font-mono text-xs font-bold uppercase tracking-wider hover:bg-vermilion hover:text-cream hover:border-vermilion transition-colors border-2 border-stone shadow-brutal-sm"
                     >
                       GitHub Repository ↗
                     </a>
@@ -207,7 +207,7 @@ export default function ProjectsCatalogPage() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 bg-vermilion text-paper font-mono text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity border-2 border-ink shadow-brutal-sm"
+                      className="px-4 py-2 bg-vermilion text-cream font-mono text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity border-2 border-stone shadow-brutal-sm"
                     >
                       {project.id === 'prismr' ? 'CRAN Package ↗' : 'Live Deployment ↗'}
                     </a>
@@ -217,7 +217,7 @@ export default function ProjectsCatalogPage() {
                       href={project.kaggleUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 bg-paper text-ink font-mono text-xs font-bold uppercase tracking-wider hover:bg-ink hover:text-paper transition-colors border-2 border-ink shadow-brutal-sm"
+                      className="px-4 py-2 bg-paper text-ink font-mono text-xs font-bold uppercase tracking-wider hover:bg-obsidian hover:text-ink transition-colors border-2 border-stone shadow-brutal-sm"
                     >
                       Kaggle Notebook ↗
                     </a>
@@ -230,10 +230,10 @@ export default function ProjectsCatalogPage() {
         </div>
 
         {/* Bottom Back Button */}
-        <div className="mt-16 pt-8 border-t-[3px] border-ink flex items-center justify-between">
+        <div className="mt-16 pt-8 border-t-[3px] border-stone flex items-center justify-between">
           <Link
             href="/"
-            className="px-6 py-3 bg-ink text-paper font-mono text-xs font-bold uppercase hover:bg-vermilion transition-colors shadow-brutal-sm inline-flex items-center gap-2"
+            className="px-6 py-3 bg-obsidian text-ink font-mono text-xs font-bold uppercase hover:bg-vermilion hover:text-cream hover:border-vermilion transition-colors border-2 border-stone shadow-brutal-sm inline-flex items-center gap-2"
           >
             ← Return to Main Chronicle
           </Link>

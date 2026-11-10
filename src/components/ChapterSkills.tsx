@@ -17,7 +17,7 @@ export default function ChapterSkills() {
   const [activeFilter, setActiveFilter] = useState<FieldFilter>('all');
 
   return (
-    <section id="skills" className="relative py-20 md:py-28 paper-texture border-t-[3px] border-ink">
+    <section id="skills" className="relative py-20 md:py-28 paper-texture border-t-[3px] border-stone">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         
         {/* Chapter Header */}
@@ -38,7 +38,7 @@ export default function ChapterSkills() {
         </div>
 
         {/* Narrative & Discipline Filter Toolbar */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-ink/20 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-stone/30 mb-12">
           <p className="font-body text-lg text-ink-muted max-w-2xl leading-relaxed">
             A classified index of programming languages, machine learning frameworks,
             database engines, and system architecture tools. Every tool listed represents
@@ -54,8 +54,8 @@ export default function ChapterSkills() {
                 onClick={() => setActiveFilter(filter.id)}
                 className={`px-3 py-1.5 text-xs font-mono font-bold tracking-wider uppercase transition-all duration-150 border-2 ${
                   activeFilter === filter.id
-                    ? 'bg-ink text-paper border-ink shadow-brutal-sm'
-                    : 'bg-paper-light text-ink border-ink/40 hover:border-ink'
+                    ? 'bg-obsidian text-ink border-stone shadow-brutal-sm'
+                    : 'bg-paper-light text-ink border-stone/45 hover:border-stone'
                 }`}
               >
                 <span className="opacity-60 mr-1.5">[{filter.code}]</span>
@@ -81,7 +81,7 @@ export default function ChapterSkills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: catIdx * 0.08 }}
-                className="bg-paper-light border-[3px] border-ink p-6 md:p-8 shadow-brutal relative flex flex-col justify-between"
+                className="bg-paper-light border-[3px] border-stone p-6 md:p-8 shadow-brutal relative flex flex-col justify-between"
               >
                 {/* Top Corner Registration Mark */}
                 <div className="absolute top-2 right-3 font-mono text-[10px] text-ink/30 tracking-widest uppercase">
@@ -107,7 +107,7 @@ export default function ChapterSkills() {
                     {filteredSkills.map((skill) => (
                       <div
                         key={skill.name}
-                        className="flex items-center justify-between py-2 border-b border-ink/15 hover:border-ink transition-colors group"
+                        className="flex items-center justify-between py-2 border-b border-stone/25 hover:border-stone transition-colors group"
                       >
                         <div className="flex items-center gap-2">
                           <span className="font-mono text-xs text-ink-muted opacity-40 group-hover:opacity-100 group-hover:text-vermilion transition-opacity">
@@ -123,7 +123,7 @@ export default function ChapterSkills() {
                           {skill.fields.map((f) => (
                             <span
                               key={f}
-                              className="px-1.5 py-0.5 border border-ink/20 font-mono text-[9px] uppercase tracking-wider text-ink/60"
+                              className="px-1.5 py-0.5 border border-stone/35 font-mono text-[9px] uppercase tracking-wider text-ink/65"
                             >
                               {f}
                             </span>
@@ -135,7 +135,7 @@ export default function ChapterSkills() {
                 </div>
 
                 {/* Footer annotation of category */}
-                <div className="mt-6 pt-4 border-t border-ink/10 flex items-center justify-between text-[11px] font-mono text-ink-muted">
+                <div className="mt-6 pt-4 border-t border-stone/20 flex items-center justify-between text-[11px] font-mono text-ink-muted">
                   <span>Entries: {filteredSkills.length}</span>
                 </div>
               </motion.div>

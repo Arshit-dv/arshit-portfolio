@@ -7,7 +7,7 @@ import { CodeChefIcon, LeetCodeIcon, CodeforcesIcon, KaggleIcon } from '@/compon
 
 export default function ChapterDirectory() {
   return (
-    <section id="directory" className="relative py-20 md:py-28 paper-texture border-t-[3px] border-ink">
+    <section id="directory" className="relative py-20 md:py-28 paper-texture border-t-[3px] border-stone">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
 
         {/* Chapter Header */}
@@ -34,7 +34,7 @@ export default function ChapterDirectory() {
 
         {/* Section 1: Education & Timeline */}
         <div className="mb-16">
-          <div className="flex items-center gap-3 mb-6 pb-2 border-b-2 border-ink">
+          <div className="flex items-center gap-3 mb-6 pb-2 border-b-2 border-stone">
             <span className="font-mono text-xs font-bold text-vermilion tracking-widest uppercase">PART I</span>
             <h3 className="font-display text-2xl font-bold tracking-tight">Academic Chronicle & Background</h3>
           </div>
@@ -47,12 +47,12 @@ export default function ChapterDirectory() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: idx * 0.1 }}
-                className="border-[3px] border-ink bg-paper-light p-6 md:p-8 shadow-brutal flex flex-col justify-between"
+                className="border-[3px] border-stone bg-paper-light p-6 md:p-8 shadow-brutal flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <div>
-                      <span className="px-2 py-0.5 border border-ink font-mono text-[10px] uppercase font-bold tracking-wider bg-paper">
+                      <span className="px-2 py-0.5 border border-stone font-mono text-[10px] uppercase font-bold tracking-wider bg-paper">
                         {exp.type}
                       </span>
                       <h4 className="font-display text-xl md:text-2xl font-bold mt-2 text-ink">
@@ -62,7 +62,7 @@ export default function ChapterDirectory() {
                         {exp.company}
                       </p>
                     </div>
-                    <span className="font-mono text-xs text-ink/70 shrink-0 font-bold border-b border-ink/40">
+                    <span className="font-mono text-xs text-ink/70 shrink-0 font-bold border-b border-stone/50">
                       {exp.period}
                     </span>
                   </div>
@@ -83,11 +83,11 @@ export default function ChapterDirectory() {
                   )}
                 </div>
 
-                <div className="pt-4 border-t border-ink/15 flex flex-wrap gap-1.5">
+                <div className="pt-4 border-t border-stone/25 flex flex-wrap gap-1.5">
                   {exp.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-0.5 font-mono text-[10px] border border-ink/30 text-ink/70"
+                      className="px-2 py-0.5 font-mono text-[10px] border border-stone/40 text-ink/75"
                     >
                       {tech}
                     </span>
@@ -100,7 +100,7 @@ export default function ChapterDirectory() {
 
         {/* Section 2: Competitive Programming & Profiles */}
         <div className="mb-16">
-          <div className="flex items-center gap-3 mb-6 pb-2 border-b-2 border-ink">
+          <div className="flex items-center gap-3 mb-6 pb-2 border-b-2 border-stone">
             <span className="font-mono text-xs font-bold text-vermilion tracking-widest uppercase">PART II</span>
             <h3 className="font-display text-2xl font-bold tracking-tight">Algorithmic & Problem-Solving Dossiers</h3>
           </div>
@@ -115,7 +115,7 @@ export default function ChapterDirectory() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="border-[3px] border-ink bg-paper-light p-6 shadow-brutal-sm hover:shadow-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all group block"
+              className="border-[3px] border-stone bg-paper-light p-6 shadow-brutal-sm hover:shadow-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all group block"
             >
               <div className="flex items-center justify-between mb-3">
                 <span className="font-mono text-[10px] tracking-wider uppercase text-ink-muted font-bold">
@@ -134,7 +134,7 @@ export default function ChapterDirectory() {
               <p className="font-body text-xs text-ink-muted mb-4 leading-relaxed">
                 Global Rank 1096 out of 28,000+ international competitors in START249D. Active regular contest participation.
               </p>
-              <div className="font-mono text-xs font-bold text-ink bg-paper px-2.5 py-1.5 border border-ink inline-block">
+              <div className="font-mono text-xs font-bold text-ink bg-paper px-2.5 py-1.5 border border-stone inline-block">
                 @arshit_dv
               </div>
             </motion.a>
@@ -148,7 +148,7 @@ export default function ChapterDirectory() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="border-[3px] border-ink bg-paper-light p-6 shadow-brutal-sm hover:shadow-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all group block"
+              className="border-[3px] border-stone bg-paper-light p-6 shadow-brutal-sm hover:shadow-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all group block"
             >
               <div className="flex items-center justify-between mb-3">
                 <span className="font-mono text-[10px] tracking-wider uppercase text-ink-muted font-bold">
@@ -167,7 +167,7 @@ export default function ChapterDirectory() {
               <p className="font-body text-xs text-ink-muted mb-4 leading-relaxed">
                 Consistent practice across Data Structures, Algorithms, Graph Theory, Dynamic Programming, and Tree Traversals.
               </p>
-              <div className="font-mono text-xs font-bold text-ink bg-paper px-2.5 py-1.5 border border-ink inline-block">
+              <div className="font-mono text-xs font-bold text-ink bg-paper px-2.5 py-1.5 border border-stone inline-block">
                 @Arshit_dv
               </div>
             </motion.a>
@@ -181,7 +181,7 @@ export default function ChapterDirectory() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="border-[3px] border-ink bg-paper-light p-6 shadow-brutal-sm hover:shadow-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all group block"
+              className="border-[3px] border-stone bg-paper-light p-6 shadow-brutal-sm hover:shadow-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all group block"
             >
               <div className="flex items-center justify-between mb-3">
                 <span className="font-mono text-[10px] tracking-wider uppercase text-ink-muted font-bold">
@@ -200,7 +200,7 @@ export default function ChapterDirectory() {
               <p className="font-body text-xs text-ink-muted mb-4 leading-relaxed">
                 Competitive programming division rounds honing speed, mathematical formulation, and memory-constrained efficiency.
               </p>
-              <div className="font-mono text-xs font-bold text-ink bg-paper px-2.5 py-1.5 border border-ink inline-block">
+              <div className="font-mono text-xs font-bold text-ink bg-paper px-2.5 py-1.5 border border-stone inline-block">
                 @Arshit_dv
               </div>
             </motion.a>
@@ -214,7 +214,7 @@ export default function ChapterDirectory() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="border-[3px] border-ink bg-paper-light p-6 shadow-brutal-sm hover:shadow-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all group block"
+              className="border-[3px] border-stone bg-paper-light p-6 shadow-brutal-sm hover:shadow-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all group block"
             >
               <div className="flex items-center justify-between mb-3">
                 <span className="font-mono text-[10px] tracking-wider uppercase text-ink-muted font-bold">
@@ -233,7 +233,7 @@ export default function ChapterDirectory() {
               <p className="font-body text-xs text-ink-muted mb-4 leading-relaxed">
                 Machine learning pipelines, exploratory data analysis studies, and predictive clinical modeling workflows.
               </p>
-              <div className="font-mono text-xs font-bold text-ink bg-paper px-2.5 py-1.5 border border-ink inline-block">
+              <div className="font-mono text-xs font-bold text-ink bg-paper px-2.5 py-1.5 border border-stone inline-block">
                 @arshitchoudhary
               </div>
             </motion.a>
@@ -243,15 +243,15 @@ export default function ChapterDirectory() {
 
         {/* Section 3: The Complete Repository Index (Table of Contents) */}
         <div>
-          <div className="flex items-center gap-3 mb-6 pb-2 border-b-2 border-ink">
+          <div className="flex items-center gap-3 mb-6 pb-2 border-b-2 border-stone">
             <span className="font-mono text-xs font-bold text-vermilion tracking-widest uppercase">PART III</span>
             <h3 className="font-display text-2xl font-bold tracking-tight">Full Project & Publication Index</h3>
           </div>
 
-          <div className="border-[3px] border-ink bg-paper-light overflow-x-auto shadow-brutal">
+          <div className="border-[3px] border-stone bg-paper-light overflow-x-auto shadow-brutal">
             <table className="w-full text-left border-collapse font-mono text-xs">
               <thead>
-                <tr className="bg-ink text-paper border-b-2 border-ink">
+                <tr className="bg-obsidian text-ink border-b-2 border-stone">
                   <th className="p-3 md:p-4 font-bold uppercase tracking-wider">Index</th>
                   <th className="p-3 md:p-4 font-bold uppercase tracking-wider">Project / Publication</th>
                   <th className="p-3 md:p-4 font-bold uppercase tracking-wider hidden sm:table-cell">Discipline</th>
@@ -259,9 +259,9 @@ export default function ChapterDirectory() {
                   <th className="p-3 md:p-4 font-bold uppercase tracking-wider text-right">Destination</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-ink/20">
+              <tbody className="divide-y divide-stone/30">
                 {PROJECTS.map((proj, idx) => (
-                  <tr key={proj.id} className="hover:bg-paper-dark/40 transition-colors">
+                  <tr key={proj.id} className="hover:bg-paper-dark/60 transition-colors">
                     <td className="p-3 md:p-4 font-bold opacity-40">
                       #{String(idx + 1).padStart(2, '0')}
                     </td>
@@ -276,7 +276,7 @@ export default function ChapterDirectory() {
                     <td className="p-3 md:p-4 hidden sm:table-cell">
                       <div className="flex gap-1 flex-wrap">
                         {proj.fields.map((f) => (
-                          <span key={f} className="px-1.5 py-0.5 border border-ink/30 uppercase text-[9px] font-bold">
+                          <span key={f} className="px-1.5 py-0.5 border border-stone/40 uppercase text-[9px] font-bold">
                             {f}
                           </span>
                         ))}
@@ -291,7 +291,7 @@ export default function ChapterDirectory() {
                           href={proj.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-block px-2 py-1 border border-ink bg-paper text-[10px] font-bold uppercase hover:bg-ink hover:text-paper transition-colors"
+                          className="inline-block px-2 py-1 border border-stone bg-paper text-[10px] font-bold uppercase hover:bg-obsidian hover:text-ink transition-colors"
                         >
                           Source ↗
                         </a>
@@ -301,7 +301,7 @@ export default function ChapterDirectory() {
                           href={proj.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-block px-2 py-1 border border-ink bg-vermilion text-paper text-[10px] font-bold uppercase hover:opacity-90 transition-opacity"
+                          className="inline-block px-2 py-1 border border-stone bg-vermilion text-cream text-[10px] font-bold uppercase hover:opacity-90 transition-opacity"
                         >
                           {proj.id === 'prismr' ? 'CRAN ↗' : 'Live ↗'}
                         </a>
@@ -311,7 +311,7 @@ export default function ChapterDirectory() {
                           href={proj.kaggleUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-block px-2 py-1 border border-ink bg-paper text-[10px] font-bold uppercase hover:bg-ink hover:text-paper transition-colors"
+                          className="inline-block px-2 py-1 border border-stone bg-paper text-[10px] font-bold uppercase hover:bg-obsidian hover:text-ink transition-colors"
                         >
                           Kaggle ↗
                         </a>

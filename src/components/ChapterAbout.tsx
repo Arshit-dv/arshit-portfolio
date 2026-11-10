@@ -58,7 +58,7 @@ export default function ChapterAbout() {
                 {PERSONAL_INFO.roleTitles.map((role) => (
                   <span
                     key={role}
-                    className="inline-block px-3 py-1 border-[2px] border-ink font-mono text-[10px] font-bold uppercase tracking-wider bg-paper-light"
+                    className="inline-block px-3 py-1 border-[2px] border-stone font-mono text-[10px] font-bold uppercase tracking-wider bg-paper-light"
                   >
                     {role}
                   </span>
@@ -74,7 +74,7 @@ export default function ChapterAbout() {
               {EXPERIENCES.map((exp) => (
                 <div
                   key={exp.id}
-                  className="border-[2px] border-ink p-4 md:p-5 hover:shadow-brutal-sm transition-all duration-150"
+                  className="border-[2px] border-stone p-4 md:p-5 hover:shadow-brutal-sm transition-all duration-150"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
                     <h4 className="font-display text-base md:text-lg font-bold text-ink">
@@ -94,7 +94,7 @@ export default function ChapterAbout() {
                     {exp.techStack.slice(0, 5).map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-0.5 bg-ink/5 font-mono text-[9px] font-semibold text-ink-muted uppercase"
+                        className="px-2 py-0.5 bg-paper-darker font-mono text-[9px] font-semibold text-ink-muted uppercase"
                       >
                         {tech}
                       </span>
@@ -114,7 +114,7 @@ export default function ChapterAbout() {
             variants={{ ...fadeUp, visible: { ...fadeUp.visible, transition: { duration: 0.5, delay: 0.2 } } }}
           >
             {/* Marginal note */}
-            <div className="border-[3px] border-ink p-5 md:p-6 bg-paper-dark relative mb-8">
+            <div className="border-[3px] border-stone p-5 md:p-6 bg-paper-dark relative mb-8">
               <div className="absolute -top-3 left-4 bg-paper-dark px-2">
                 <span className="editorial-label text-ink-muted">
                   Honors & Rankings
@@ -141,7 +141,7 @@ export default function ChapterAbout() {
             </div>
 
             {/* Quick reference card */}
-            <div className="border-[2px] border-ink p-5">
+            <div className="border-[2px] border-stone p-5">
               <div className="editorial-label text-ink-muted mb-4">
                 Quick Reference
               </div>

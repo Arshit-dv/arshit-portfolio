@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* ═══════════════════════════════════════════════════════════════════════════
    THE DEVELOPER'S CHRONICLE — Global Styles
    Neo-brutalist, editorial, manga-inspired design system
@@ -9,18 +5,23 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @layer base {
   :root {
-    --color-paper: #F5F0E8;
-    --color-paper-light: #FAF7F2;
-    --color-paper-dark: #EDE6D6;
-    --color-ink: #1A1A1A;
+    --color-paper: #322918;
+    --color-paper-light: #2D2111;
+    --color-paper-dark: #2C2513;
+    --color-ink: #D8D5D0;
+    --color-border: #837A69;
     --color-vermilion: #E63B2E;
     --border-thick: 3px;
     --border-thin: 1px;
-    --shadow-brutal: 4px 4px 0px #1A1A1A;
-    --shadow-brutal-sm: 2px 2px 0px #1A1A1A;
-    --shadow-brutal-lg: 6px 6px 0px #1A1A1A;
+    --shadow-brutal: 4px 4px 0px #1B140A;
+    --shadow-brutal-sm: 2px 2px 0px #1B140A;
+    --shadow-brutal-lg: 6px 6px 0px #1B140A;
   }
 
   html {
@@ -42,8 +43,8 @@
   }
 
   ::selection {
-    background: rgba(230, 59, 46, 0.25);
-    color: #1A1A1A;
+    background: rgba(230, 59, 46, 0.35);
+    color: #F5F0E8;
   }
 }
 
@@ -55,27 +56,27 @@
   background: var(--color-paper);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1A1A1A;
+  background: var(--color-border);
   border: 2px solid var(--color-paper);
 }
 
 /* ─── Paper Texture ─── */
 @layer utilities {
   .paper-texture {
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   }
 
   .halftone-pattern {
-    background-image: radial-gradient(circle, #1A1A1A 0.5px, transparent 0.5px);
+    background-image: radial-gradient(circle, rgba(216, 213, 208, 0.15) 0.5px, transparent 0.5px);
     background-size: 8px 8px;
   }
 
   .border-brutal {
-    border: var(--border-thick) solid #1A1A1A;
+    border: var(--border-thick) solid var(--color-border);
   }
 
   .border-brutal-thin {
-    border: var(--border-thin) solid #1A1A1A;
+    border: var(--border-thin) solid var(--color-border);
   }
 
   .shadow-brutal {
@@ -113,7 +114,7 @@
   }
 
   .manga-panel {
-    border: var(--border-thick) solid #1A1A1A;
+    border: var(--border-thick) solid var(--color-border);
     position: relative;
   }
 
@@ -124,7 +125,7 @@
     left: -1px;
     right: -1px;
     bottom: -1px;
-    border: 1px solid rgba(26, 26, 26, 0.3);
+    border: 1px solid rgba(131, 122, 105, 0.3);
     pointer-events: none;
   }
 
@@ -172,7 +173,7 @@
   content: '';
   flex: 1;
   height: 3px;
-  background: #1A1A1A;
+  background: #1B140A;
 }
 
 /* ─── Reduced Motion ─── */
@@ -196,7 +197,7 @@
 
 /* ─── Print-like page borders ─── */
 .page-border {
-  border: 3px solid #1A1A1A;
+  border: 3px solid var(--color-border);
   position: relative;
 }
 
@@ -204,6 +205,6 @@
   content: '';
   position: absolute;
   inset: 4px;
-  border: 1px solid rgba(26, 26, 26, 0.15);
+  border: 1px solid rgba(216, 213, 208, 0.15);
   pointer-events: none;
 }

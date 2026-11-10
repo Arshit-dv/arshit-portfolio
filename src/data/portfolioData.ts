@@ -368,6 +368,7 @@ export const EXPERIENCES: ExperienceItem[] = [
 // Email:             arshitchoudhary3010@gmail.com
 // Resume:            https://github.com/Arshit-dv
 // PrismR GitHub:     https://github.com/Arshit-dv/PrismR
+// PrismR CRAN:       https://cran.rstudio.com/web/packages/PrismR
 // SportShare GitHub: https://github.com/Arshit-dv/SportShare
 // SportShare Live:   https://sport-share.vercel.app
 // HR System GitHub:  https://github.com/Arshit-dv/HR-Recruitment-and-managment
@@ -376,5 +377,6 @@ export const EXPERIENCES: ExperienceItem[] = [
 // NexDesk GitHub:    https://github.com/Arshit-dv/NexDesk
 // Kairo GitHub:      https://github.com/Arshit-dv/Kairo
 // Meera GitHub:      https://github.com/Arshit-dv/Meera
+// Federis GitHub:    https://github.com/Arshit-dv/Federis
 // Diabetes Kaggle:   https://kaggle.com/code/arshitchoudhary/diabetes-prediction-using-ml
 // OpenGraph URL:     https://github.com/Arshit-dv

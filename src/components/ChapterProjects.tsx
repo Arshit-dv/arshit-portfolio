@@ -16,13 +16,13 @@ const FILTER_OPTIONS: { id: FilterField; label: string }[] = [
 
 function ProjectActionLinks({ project }: { project: Project }) {
   return (
-    <div className="flex items-center gap-2 flex-wrap pt-2" onClick={(e) => e.stopPropagation()}>
+    <div className="flex items-center gap-2 flex-wrap pt-2">
       {project.githubUrl && (
         <a
           href={project.githubUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-ink text-paper font-mono text-xs font-bold uppercase tracking-wider border-2 border-ink hover:bg-vermilion hover:border-vermilion transition-colors shadow-brutal-sm hover:shadow-none"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-obsidian text-ink font-mono text-xs font-bold uppercase tracking-wider border-2 border-stone hover:bg-vermilion hover:border-vermilion hover:text-cream transition-colors shadow-brutal-sm hover:shadow-none"
           aria-label={`${project.title} GitHub repository`}
         >
           Source Code ↗
@@ -33,7 +33,7 @@ function ProjectActionLinks({ project }: { project: Project }) {
           href={project.liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-vermilion text-paper font-mono text-xs font-bold uppercase tracking-wider border-2 border-ink hover:bg-ink transition-colors shadow-brutal-sm hover:shadow-none"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-vermilion text-cream font-mono text-xs font-bold uppercase tracking-wider border-2 border-stone hover:bg-obsidian hover:text-ink transition-colors shadow-brutal-sm hover:shadow-none"
           aria-label={`${project.title} live demo`}
         >
           {project.id === 'prismr' ? 'CRAN Package ↗' : 'Live Demo ↗'}
@@ -44,7 +44,7 @@ function ProjectActionLinks({ project }: { project: Project }) {
           href={project.kaggleUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-paper text-ink font-mono text-xs font-bold uppercase tracking-wider border-2 border-ink hover:bg-ink hover:text-paper transition-colors shadow-brutal-sm hover:shadow-none"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-paper text-ink font-mono text-xs font-bold uppercase tracking-wider border-2 border-stone hover:bg-obsidian hover:text-ink transition-colors shadow-brutal-sm hover:shadow-none"
           aria-label={`${project.title} Kaggle notebook`}
         >
           Kaggle Notebook ↗
@@ -63,7 +63,7 @@ export default function ChapterProjects() {
   });
 
   return (
-    <section id="projects" className="relative py-20 md:py-28 bg-paper paper-texture border-t-[3px] border-ink">
+    <section id="projects" className="relative py-20 md:py-28 bg-paper paper-texture border-t-[3px] border-stone">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         
         {/* Chapter header */}
@@ -84,7 +84,7 @@ export default function ChapterProjects() {
         </div>
 
         {/* Narrative Intro & Filter Bar */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-8 border-b-2 border-ink mb-12">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-8 border-b-2 border-stone/60 mb-12">
           <div>
             <p className="font-body text-lg text-ink-muted max-w-2xl leading-relaxed">
               Every project, framework, and exploratory analytical model in one unified chronicle.
@@ -100,8 +100,8 @@ export default function ChapterProjects() {
                 onClick={() => setSelectedFilter(filter.id)}
                 className={`px-3 py-1.5 text-xs font-mono font-bold tracking-wider uppercase transition-all duration-150 border-2 ${
                   selectedFilter === filter.id
-                    ? 'bg-ink text-paper border-ink shadow-brutal-sm'
-                    : 'bg-paper text-ink border-ink/40 hover:border-ink'
+                    ? 'bg-obsidian text-ink border-stone shadow-brutal-sm'
+                    : 'bg-paper text-ink border-stone/45 hover:border-stone'
                 }`}
               >
                 {filter.label}
@@ -119,11 +119,11 @@ export default function ChapterProjects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: idx * 0.05 }}
-              className="border-[3px] border-ink bg-paper-light p-6 shadow-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex flex-col justify-between group"
+              className="border-[3px] border-stone bg-paper-light p-6 shadow-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex flex-col justify-between group"
             >
               <div>
                 {/* Header Strip with Index & Discipline Tags */}
-                <div className="flex items-center justify-between border-b border-ink/15 pb-3 mb-4">
+                <div className="flex items-center justify-between border-b border-stone/25 pb-3 mb-4">
                   <span className="font-mono text-xs font-bold text-ink opacity-40">
                     PRJ #{String(idx + 1).padStart(2, '0')}
                   </span>
@@ -131,7 +131,7 @@ export default function ChapterProjects() {
                     {project.fields.map((f) => (
                       <span
                         key={f}
-                        className="px-1.5 py-0.5 border border-ink/30 font-mono text-[9px] uppercase font-bold text-ink-muted"
+                        className="px-1.5 py-0.5 border border-stone/45 font-mono text-[9px] uppercase font-bold text-ink-muted"
                       >
                         {f}
                       </span>
@@ -154,7 +154,7 @@ export default function ChapterProjects() {
 
                 {/* Highlights */}
                 {project.highlights && project.highlights.length > 0 && (
-                  <ul className="space-y-1.5 border-t border-ink/10 pt-3 mb-4">
+                  <ul className="space-y-1.5 border-t border-stone/20 pt-3 mb-4">
                     {project.highlights.slice(0, 2).map((highlight, hIdx) => (
                       <li key={hIdx} className="flex items-start gap-2 text-sm font-body text-ink-muted">
                         <span className="text-vermilion font-bold shrink-0 mt-0.5">—</span>
@@ -167,11 +167,11 @@ export default function ChapterProjects() {
 
               <div>
                 {/* Tech Stack */}
-                <div className="pt-3 border-t border-ink/15 mb-4 flex flex-wrap gap-1.5">
+                <div className="pt-3 border-t border-stone/25 mb-4 flex flex-wrap gap-1.5">
                   {project.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-0.5 bg-paper border border-ink/20 font-mono text-[10px] text-ink/70"
+                      className="px-2 py-0.5 bg-paper border border-stone/35 font-mono text-[10px] text-ink/75"
                     >
                       {tech}
                     </span>
@@ -186,20 +186,20 @@ export default function ChapterProjects() {
         </div>
 
         {/* Dedicated Page Redirection Banner */}
-        <div className="border-[3px] border-ink bg-ink text-paper p-8 md:p-10 shadow-brutal-lg flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="border-[3px] border-stone bg-obsidian text-ink p-8 md:p-10 shadow-brutal-lg flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2">
             <span className="editorial-label text-vermilion block">DEEP-DIVE DOCUMENTATION</span>
-            <h3 className="font-display text-2xl md:text-3xl font-bold text-paper">
+            <h3 className="font-display text-2xl md:text-3xl font-bold text-ink">
               Want the Full Technical Breakdown & Case Studies?
             </h3>
-            <p className="font-body text-sm text-paper/80 max-w-2xl leading-relaxed">
+            <p className="font-body text-sm text-ink-light max-w-2xl leading-relaxed">
               Explore our dedicated Projects Chronicle containing expanded architectural narratives, statistical pipeline explanations, and detailed highlight logs for every system.
             </p>
           </div>
 
           <Link
             href="/projects"
-            className="px-6 py-4 bg-vermilion text-paper font-mono text-xs font-bold uppercase tracking-wider hover:bg-paper hover:text-ink transition-colors border-2 border-paper shrink-0 text-center shadow-brutal-sm"
+            className="px-6 py-4 bg-vermilion text-cream font-mono text-xs font-bold uppercase tracking-wider hover:bg-paper hover:text-ink transition-colors border-2 border-stone shrink-0 text-center shadow-brutal-sm"
           >
             Open Dedicated Projects Page →
           </Link>

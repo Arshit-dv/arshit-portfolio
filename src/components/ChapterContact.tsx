@@ -1,17 +1,32 @@
 'use client';
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useRef, useEffect } from 'react';
 import { PERSONAL_INFO } from '@/data/portfolioData';
 import { EmailIcon, GithubIcon, LinkedinIcon } from '@/components/Icons';
 
 export default function ChapterContact() {
   const [copied, setCopied] = useState(false);
+  const copyTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const copyEmail = () => {
-    navigator.clipboard.writeText(PERSONAL_INFO.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  useEffect(() => {
+    return () => {
+      if (copyTimerRef.current) {
+        clearTimeout(copyTimerRef.current);
+      }
+    };
+  }, []);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(PERSONAL_INFO.email);
+      setCopied(true);
+      if (copyTimerRef.current) {
+        clearTimeout(copyTimerRef.current);
+      }
+      copyTimerRef.current = setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
   };
 
   const scrollToTop = () => {
@@ -19,7 +34,7 @@ export default function ChapterContact() {
   };
 
   return (
-    <section id="contact" className="relative py-20 md:py-28 paper-texture border-t-[3px] border-ink bg-paper-dark/20">
+    <section id="contact" className="relative py-20 md:py-28 paper-texture border-t-[3px] border-stone bg-paper-dark/30">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
 
         {/* Chapter Header */}
@@ -40,8 +55,8 @@ export default function ChapterContact() {
         </div>
 
         {/* Full-Width Direct Correspondence Panel */}
-        <div className="w-full border-[3px] border-ink bg-paper-light p-8 md:p-12 shadow-brutal mb-20">
-          <div className="border-b-2 border-ink pb-6 mb-8">
+        <div className="w-full border-[3px] border-stone bg-paper-light p-8 md:p-12 shadow-brutal mb-20">
+          <div className="border-b-2 border-stone pb-6 mb-8">
             <span className="editorial-label text-vermilion block mb-2">DIRECT CORRESPONDENCE</span>
             <h3 className="font-display text-2xl md:text-4xl font-bold mb-4">
               Open for Technical Discussion, Engineering Roles & Open-Source.
@@ -55,7 +70,7 @@ export default function ChapterContact() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
             {/* Primary Electronic Mail Card */}
-            <div className="p-6 md:p-8 border-[3px] border-ink bg-paper shadow-brutal-sm flex flex-col justify-between min-h-[180px]">
+            <div className="p-6 md:p-8 border-[3px] border-stone bg-paper shadow-brutal-sm flex flex-col justify-between min-h-[180px]">
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
@@ -81,7 +96,7 @@ export default function ChapterContact() {
               <div>
                 <a
                   href={`mailto:${PERSONAL_INFO.email}`}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-ink text-paper font-mono text-xs font-bold uppercase hover:bg-vermilion transition-colors shadow-brutal-sm hover:shadow-none"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-obsidian text-ink font-mono text-xs font-bold uppercase border-2 border-stone hover:bg-vermilion hover:border-vermilion hover:text-cream transition-colors shadow-brutal-sm hover:shadow-none"
                 >
                   <span>Open in Mail Client ↗</span>
                 </a>
@@ -94,7 +109,7 @@ export default function ChapterContact() {
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 p-6 border-[3px] border-ink bg-paper font-mono text-sm md:text-base font-bold uppercase hover:bg-ink hover:text-paper transition-all shadow-brutal-sm flex items-center justify-between group"
+                className="flex-1 p-6 border-[3px] border-stone bg-paper font-mono text-sm md:text-base font-bold uppercase hover:bg-obsidian hover:text-ink transition-all shadow-brutal-sm flex items-center justify-between group"
               >
                 <div className="flex items-center gap-3">
                   <GithubIcon className="w-5 h-5 text-ink group-hover:text-vermilion transition-colors" />
@@ -106,7 +121,7 @@ export default function ChapterContact() {
                 href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 p-6 border-[3px] border-ink bg-paper font-mono text-sm md:text-base font-bold uppercase hover:bg-ink hover:text-paper transition-all shadow-brutal-sm flex items-center justify-between group"
+                className="flex-1 p-6 border-[3px] border-stone bg-paper font-mono text-sm md:text-base font-bold uppercase hover:bg-obsidian hover:text-ink transition-all shadow-brutal-sm flex items-center justify-between group"
               >
                 <div className="flex items-center gap-3">
                   <LinkedinIcon className="w-5 h-5 text-ink group-hover:text-vermilion transition-colors" />
@@ -120,7 +135,7 @@ export default function ChapterContact() {
         </div>
 
         {/* ─── Colophon & Footer ─── */}
-        <div className="border-t-[3px] border-ink pt-12 pb-6">
+        <div className="border-t-[3px] border-stone pt-12 pb-6">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-10">
 
             {/* Publication details */}
@@ -141,7 +156,7 @@ export default function ChapterContact() {
             <div className="md:col-span-2 flex md:justify-end items-start">
               <button
                 onClick={scrollToTop}
-                className="px-4 py-2 border-2 border-ink bg-paper font-mono text-xs font-bold uppercase hover:bg-ink hover:text-paper transition-all shadow-brutal-sm flex items-center gap-1.5"
+                className="px-4 py-2 border-2 border-stone bg-paper font-mono text-xs font-bold uppercase hover:bg-obsidian hover:text-ink transition-all shadow-brutal-sm flex items-center gap-1.5"
               >
                 <span>↑</span> Top of Volume
               </button>
@@ -150,7 +165,7 @@ export default function ChapterContact() {
           </div>
 
           {/* Copyright notice */}
-          <div className="border-t border-ink/20 pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-ink-muted gap-2">
+          <div className="border-t border-stone/30 pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-ink-muted gap-2">
             <span>© {new Date().getFullYear()} {PERSONAL_INFO.name}. All original rights reserved.</span>
             <div className="flex gap-4">
               <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer" className="hover:text-vermilion">GitHub</a>
